@@ -10,5 +10,5 @@ enum TileState
 };
 struct Tile
 {
-    int state = active;
+    int state = notVisited;
 };

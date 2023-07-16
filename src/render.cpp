@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Grid/Grid.h"
+#include "Algorithms/BFS.h"
 
 static sf::Color tileColors[6];
 void initializeTileColors()
@@ -20,12 +21,12 @@ void renderGrid(Grid *gridObj,sf::RenderWindow *window)
     tile.setOutlineThickness(1.0f);
     tile.setOutlineColor(sf::Color::Black);
 
-    for(int i=0;i<gridObj->gridSize;i++)
+    for(int row=0;row<gridObj->gridSize;row++)
     {
-        for(int j=0;j<gridObj->gridSize;j++)
+        for(int col=0;col<gridObj->gridSize;col++)
         {
-            tile.setFillColor(tileColors[gridObj->grid[i][j].state]);
-            tile.setPosition(i*gridObj->tileSize,j*gridObj->tileSize);
+            tile.setFillColor(tileColors[gridObj->grid[row][col].state]);
+            tile.setPosition(col*gridObj->tileSize,row*gridObj->tileSize);
             window->draw(tile);
         }
     }
@@ -40,6 +41,7 @@ void renderLoop()
     sf::RenderWindow app(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML window");
     Grid grid(WINDOW_WIDTH);
     initializeTileColors();
+
     while (app.isOpen())
     {
         sf::Event event;
@@ -50,6 +52,7 @@ void renderLoop()
         }
 
         app.clear();
+        visualizeBfs(&grid);
         renderGrid(&grid,&app);
         app.display();
     }

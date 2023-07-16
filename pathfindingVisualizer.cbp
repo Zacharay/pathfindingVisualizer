@@ -40,7 +40,15 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="cb.bmp" />
-		<Unit filename="main.cpp" />
+		<Unit filename="src/Grid/Grid.cpp" />
+		<Unit filename="src/Grid/Grid.h" />
+		<Unit filename="src/Grid/Tile.cpp" />
+		<Unit filename="src/Grid/Tile.h" />
+		<Unit filename="src/Grid/Vector2.cpp" />
+		<Unit filename="src/Grid/Vector2.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/render.cpp" />
+		<Unit filename="src/render.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
