@@ -1,3 +1,4 @@
 #pragma once
 #include "../Grid/Grid.h"
-void visualizeBfs(Grid *gridObj);
+#include <SFML/Graphics.hpp>
+void visualizeBfs(Grid *gridObj,sf::RenderWindow *window);

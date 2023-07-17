@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "Grid/Grid.h"
 #include "Algorithms/BFS.h"
+#include <thread>
 
 static sf::Color tileColors[6];
 void initializeTileColors()
@@ -15,7 +16,7 @@ void initializeTileColors()
 }
 void renderGrid(Grid *gridObj,sf::RenderWindow *window)
 {
-
+    window->clear();
     sf::RectangleShape tile;
     tile.setSize(sf::Vector2f(gridObj->tileSize, gridObj->tileSize));
     tile.setOutlineThickness(1.0f);
@@ -30,7 +31,7 @@ void renderGrid(Grid *gridObj,sf::RenderWindow *window)
             window->draw(tile);
         }
     }
-
+    window->display();
 }
 
 
@@ -42,6 +43,8 @@ void renderLoop()
     Grid grid(WINDOW_WIDTH);
     initializeTileColors();
 
+    std::thread bfsThread(visualizeBfs, &grid, &app);
+
     while (app.isOpen())
     {
         sf::Event event;
@@ -51,9 +54,6 @@ void renderLoop()
                 app.close();
         }
 
-        app.clear();
-        visualizeBfs(&grid);
-        renderGrid(&grid,&app);
-        app.display();
     }
+    bfsThread.join();
 }

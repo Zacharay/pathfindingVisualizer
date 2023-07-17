@@ -40,6 +40,8 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="cb.bmp" />
+		<Unit filename="src/Algorithms/BFS.cpp" />
+		<Unit filename="src/Algorithms/BFS.h" />
 		<Unit filename="src/Grid/Grid.cpp" />
 		<Unit filename="src/Grid/Grid.h" />
 		<Unit filename="src/Grid/Tile.cpp" />

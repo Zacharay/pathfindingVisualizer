@@ -11,4 +11,5 @@ enum TileState
 struct Tile
 {
     int state = notVisited;
+    Tile *parentTile = nullptr;
 };
