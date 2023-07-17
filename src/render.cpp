@@ -2,15 +2,16 @@
 #include "Grid/Grid.h"
 #include "Algorithms/BFS.h"
 #include <thread>
+#include <iostream>
 
 static sf::Color tileColors[6];
 void initializeTileColors()
 {
     tileColors[TileState::notVisited] = sf::Color::White;
     tileColors[TileState::visited] = sf::Color::Cyan;
-    tileColors[TileState::active] = sf::Color::Green;
+    tileColors[TileState::active] = sf::Color::Yellow;
     tileColors[TileState::wall] =sf::Color::Black;
-    tileColors[TileState::source]= sf::Color::Yellow;
+    tileColors[TileState::source]= sf::Color::Green;
     tileColors[TileState::destination]= sf::Color::Red;
 
 }
@@ -33,7 +34,15 @@ void renderGrid(Grid *gridObj,sf::RenderWindow *window)
     }
     window->display();
 }
-
+void processEvents(sf::RenderWindow &app)
+{
+    sf::Event event;
+    while (app.pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed)
+            app.close();
+    }
+}
 
 void renderLoop()
 {
@@ -47,13 +56,7 @@ void renderLoop()
 
     while (app.isOpen())
     {
-        sf::Event event;
-        while (app.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                app.close();
-        }
-
+        processEvents(app);
     }
     bfsThread.join();
 }

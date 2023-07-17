@@ -1,7 +1,7 @@
 #include "Grid.h"
 #include <iostream>
 Grid::Grid(int windowSize)
-:sourceCoords(10,24),destCoords(49,25)
+:sourceCoords(10,20),destCoords(30,20)
 {
     tileSize = windowSize/gridSize;
     grid[sourceCoords.row][sourceCoords.col].state = source;

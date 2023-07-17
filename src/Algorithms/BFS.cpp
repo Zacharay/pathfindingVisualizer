@@ -5,6 +5,8 @@
 #include "../render.h"
 #include <chrono>
 #include <thread>
+#include "drawPath.h"
+
 
 void visualizeBfs(Grid *gridObj,sf::RenderWindow *window){
 
@@ -29,10 +31,10 @@ void visualizeBfs(Grid *gridObj,sf::RenderWindow *window){
             int new_col = parent_col+dirX[i];
             int new_row = parent_row+dirY[i];
 
-
             if(new_col == gridObj->destCoords.col&&new_row==gridObj->destCoords.row)
             {
                 pathFound=true;
+                gridObj->grid[new_row][new_col].parentTile = &gridObj->grid[parent_row][parent_col];
                 break;
             }
 
@@ -49,10 +51,12 @@ void visualizeBfs(Grid *gridObj,sf::RenderWindow *window){
 
 
         renderGrid(gridObj,window);
-        std::this_thread::sleep_for(std::chrono::milliseconds(2));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
+    if(pathFound)
+    {
+            Tile *destParent = gridObj->grid[gridObj->destCoords.row][gridObj->destCoords.col].parentTile;
+            drawPath(gridObj,window,destParent);
     }
 }
-void reconstructPath(Grid *gridObj,sf::RenderWindow *window)
-{
 
-}

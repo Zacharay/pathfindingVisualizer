@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1689526471 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.cpp
+1689600140 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.cpp
 	"Grid.h"
 	<iostream>
 
@@ -8,7 +8,7 @@
 1689439620 source:/home/zachary/Projects/pathfindingVisualizer/src/main.cpp
 	"render.h"
 
-1689453141 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.h
+1689598338 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.h
 	"Vector2.h"
 	"Tile.h"
 
@@ -18,26 +18,39 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689591544 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689601367 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 	"Algorithms/BFS.h"
 	<thread>
+	<iostream>
 
 1689525554 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.h
 
 1689525563 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.cpp
 	"Vector2.h"
 
-1689591638 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/BFS.cpp
+1689599856 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/BFS.cpp
 	"../Grid/Grid.h"
 	"queue"
 	"../Grid/Vector2.h"
 	"../render.h"
 	<chrono>
+	<iostream>
 	<thread>
+	"drawPath.h"
 
 1689587775 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/BFS.h
 	"../Grid/Grid.h"
 	<SFML/Graphics.hpp>
+
+1689599957 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/drawPath.h
+	"SFML/Graphics.hpp"
+	"../Grid/Grid.h"
+
+1689600008 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/drawPath.cpp
+	"drawPath.h"
+	"../render.h"
+	<thread>
+	<chrono>
 
