@@ -34,13 +34,42 @@ void renderGrid(Grid *gridObj,sf::RenderWindow *window)
     }
     window->display();
 }
-void processEvents(sf::RenderWindow &app)
+bool stopWallDrawing = false;
+
+void processEvents(sf::RenderWindow &app,Grid &gridObj)
 {
     sf::Event event;
     while (app.pollEvent(event))
     {
         if (event.type == sf::Event::Closed)
+        {
             app.close();
+        }
+        //draw walls
+        if(event.type==sf::Event::MouseButtonPressed&&event.mouseButton.button==sf::Mouse::Left&&!stopWallDrawing)
+        {
+
+            while (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+
+                    sf::Vector2i mousePosition = sf::Mouse::getPosition(app);
+                    int mouseX = mousePosition.x/gridObj.tileSize;
+                    int mouseY = mousePosition.y/gridObj.tileSize;
+
+                    if(gridObj.grid[mouseY][mouseX].state==TileState::notVisited)
+                    {
+                        gridObj.grid[mouseY][mouseX].state =TileState::wall;
+                    }
+                    renderGrid(&gridObj,&app);
+                    sf::Event tempEvent;
+                    while (app.pollEvent(tempEvent));
+                }
+        }
+        if(event.type==sf::Event::KeyPressed&&event.key.code==sf::Keyboard::Enter)
+        {
+            stopWallDrawing=true;
+            visualizeBfs(&gridObj,&app);
+        }
     }
 }
 
@@ -52,11 +81,11 @@ void renderLoop()
     Grid grid(WINDOW_WIDTH);
     initializeTileColors();
 
-    std::thread bfsThread(visualizeBfs, &grid, &app);
 
     while (app.isOpen())
     {
-        processEvents(app);
+
+        processEvents(app,grid);
+        renderGrid(&grid,&app);
     }
-    bfsThread.join();
 }

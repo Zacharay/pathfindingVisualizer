@@ -18,7 +18,7 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689601367 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689603137 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 	"Algorithms/BFS.h"
@@ -30,13 +30,12 @@
 1689525563 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.cpp
 	"Vector2.h"
 
-1689599856 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/BFS.cpp
+1689601401 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/BFS.cpp
 	"../Grid/Grid.h"
 	"queue"
 	"../Grid/Vector2.h"
 	"../render.h"
 	<chrono>
-	<iostream>
 	<thread>
 	"drawPath.h"
 
@@ -53,4 +52,11 @@
 	"../render.h"
 	<thread>
 	<chrono>
+
+1689601373 source:/home/zachary/Projects/pathfindingVisualizer/src/drawWalls.cpp
+	"drawWalls.h"
+
+1689601387 /home/zachary/Projects/pathfindingVisualizer/src/drawWalls.h
+	<SFML/Graphics.hpp>
+	"Grid/Grid.h"
 
