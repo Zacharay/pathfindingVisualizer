@@ -15,6 +15,7 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
+					<Add option="-pthread" />
 					<Add library="sfml-graphics" />
 					<Add library="sfml-window" />
 					<Add library="sfml-system" />
@@ -30,6 +31,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-pthread" />
 					<Add library="sfml-graphics" />
 					<Add library="sfml-window" />
 					<Add library="sfml-system" />
@@ -42,12 +44,16 @@
 		<Unit filename="cb.bmp" />
 		<Unit filename="src/Algorithms/BFS.cpp" />
 		<Unit filename="src/Algorithms/BFS.h" />
+		<Unit filename="src/Algorithms/drawPath.cpp" />
+		<Unit filename="src/Algorithms/drawPath.h" />
 		<Unit filename="src/Grid/Grid.cpp" />
 		<Unit filename="src/Grid/Grid.h" />
 		<Unit filename="src/Grid/Tile.cpp" />
 		<Unit filename="src/Grid/Tile.h" />
 		<Unit filename="src/Grid/Vector2.cpp" />
 		<Unit filename="src/Grid/Vector2.h" />
+		<Unit filename="src/drawWalls.cpp" />
+		<Unit filename="src/drawWalls.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/render.cpp" />
 		<Unit filename="src/render.h" />

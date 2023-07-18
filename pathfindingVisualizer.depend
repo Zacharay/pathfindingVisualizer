@@ -18,12 +18,13 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689603137 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689675584 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 	"Algorithms/BFS.h"
 	<thread>
 	<iostream>
+	"mouseEventHandler.h"
 
 1689525554 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.h
 
@@ -59,4 +60,14 @@
 1689601387 /home/zachary/Projects/pathfindingVisualizer/src/drawWalls.h
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
+
+1689679111 source:/home/zachary/Projects/pathfindingVisualizer/src/mouseEventHandler.cpp
+	"mouseEventHandler.h"
+	"Grid/Vector2.h"
+	"render.h"
+	"iostream"
+
+1689675012 /home/zachary/Projects/pathfindingVisualizer/src/mouseEventHandler.h
+	"Grid/Grid.h"
+	"SFML/Graphics.hpp"
 

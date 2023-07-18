@@ -3,6 +3,8 @@
 #include "Algorithms/BFS.h"
 #include <thread>
 #include <iostream>
+#include "mouseEventHandler.h"
+
 
 static sf::Color tileColors[6];
 void initializeTileColors()
@@ -34,42 +36,27 @@ void renderGrid(Grid *gridObj,sf::RenderWindow *window)
     }
     window->display();
 }
-bool stopWallDrawing = false;
 
-void processEvents(sf::RenderWindow &app,Grid &gridObj)
+bool stopMouseEvents = false;
+void processEvents(sf::RenderWindow &window,Grid &gridObj)
 {
     sf::Event event;
-    while (app.pollEvent(event))
+    while (window.pollEvent(event))
     {
         if (event.type == sf::Event::Closed)
         {
-            app.close();
-        }
-        //draw walls
-        if(event.type==sf::Event::MouseButtonPressed&&event.mouseButton.button==sf::Mouse::Left&&!stopWallDrawing)
-        {
-
-            while (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-                {
-
-                    sf::Vector2i mousePosition = sf::Mouse::getPosition(app);
-                    int mouseX = mousePosition.x/gridObj.tileSize;
-                    int mouseY = mousePosition.y/gridObj.tileSize;
-
-                    if(gridObj.grid[mouseY][mouseX].state==TileState::notVisited)
-                    {
-                        gridObj.grid[mouseY][mouseX].state =TileState::wall;
-                    }
-                    renderGrid(&gridObj,&app);
-                    sf::Event tempEvent;
-                    while (app.pollEvent(tempEvent));
-                }
+            window.close();
         }
         if(event.type==sf::Event::KeyPressed&&event.key.code==sf::Keyboard::Enter)
         {
-            stopWallDrawing=true;
-            visualizeBfs(&gridObj,&app);
+            stopMouseEvents = true;;
+            visualizeBfs(&gridObj,&window);
         }
+        if(!stopMouseEvents)
+        {
+            handleMouseEvents(&gridObj,&window,&event);
+        }
+
     }
 }
 
@@ -77,15 +64,15 @@ void renderLoop()
 {
     const int WINDOW_WIDTH=900;
     const int WINDOW_HEIGHT=900;
-    sf::RenderWindow app(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML window");
+    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML window");
     Grid grid(WINDOW_WIDTH);
     initializeTileColors();
 
 
-    while (app.isOpen())
+    while (window.isOpen())
     {
 
-        processEvents(app,grid);
-        renderGrid(&grid,&app);
+        processEvents(window,grid);
+        renderGrid(&grid,&window);
     }
 }
