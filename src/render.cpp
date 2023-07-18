@@ -41,6 +41,7 @@ bool stopMouseEvents = false;
 void processEvents(sf::RenderWindow &window,Grid &gridObj)
 {
     sf::Event event;
+    std::thread bfsThread(visualizeBfs,&gridObj,&window);
     while (window.pollEvent(event))
     {
         if (event.type == sf::Event::Closed)
@@ -49,8 +50,7 @@ void processEvents(sf::RenderWindow &window,Grid &gridObj)
         }
         if(event.type==sf::Event::KeyPressed&&event.key.code==sf::Keyboard::Enter)
         {
-            stopMouseEvents = true;;
-            visualizeBfs(&gridObj,&window);
+            stopMouseEvents = true;
         }
         if(!stopMouseEvents)
         {
@@ -58,6 +58,7 @@ void processEvents(sf::RenderWindow &window,Grid &gridObj)
         }
 
     }
+    bfsThread.join();
 }
 
 void renderLoop()

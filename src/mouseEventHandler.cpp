@@ -24,48 +24,62 @@ void drawWalls(sf::RenderWindow *window,Grid *gridObj)
                     renderGrid(gridObj,window);
                 }
 }
-void moveTile(sf::RenderWindow *window,Grid *gridObj,Tile currentTile)
-{
 
-    while (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-    {
+Tile *movingTile = nullptr;
+bool hasTileMoved = false;
+
+void moveTile(sf::RenderWindow *window,Grid *gridObj)
+{
         Vector2 mousePos = getMousePosition(window,gridObj);
-        currentTile = gridObj->grid[mousePos.row][mousePos.col];
-        std::cout<<currentTile.state<<std::endl;
-        int state = 0;
-        if(currentTile.state==TileState::source)
+        hasTileMoved=true;
+        if(movingTile->state==TileState::source)
         {
             Vector2 srcCoords = gridObj->sourceCoords;
             gridObj->grid[srcCoords.row][srcCoords.col].state=TileState::notVisited;
-
             gridObj->sourceCoords=mousePos;
-
+            movingTile = &gridObj->grid[mousePos.row][mousePos.col];
+            movingTile->state= TileState::source;
         }
-        gridObj->grid[mousePos.row][mousePos.col].state= TileState::source;
-        renderGrid(gridObj,window);
-    }
+        else
+        {
+            Vector2 destCoords = gridObj->destCoords;
+            gridObj->grid[destCoords.row][destCoords.col].state=TileState::notVisited;
+            gridObj->destCoords=mousePos;
+
+            movingTile = &gridObj->grid[mousePos.row][mousePos.col];
+            movingTile->state= TileState::destination;
+        }
+
 
 }
 
 void handleMouseEvents(Grid *gridObj,sf::RenderWindow *window,sf::Event *event){
 
-
-        if(event->type==sf::Event::MouseButtonPressed&&event->mouseButton.button==sf::Mouse::Left)
+        if(event->type==sf::Event::MouseButtonPressed&&event->mouseButton.button==sf::Mouse::Left&&movingTile==nullptr)
         {
             Vector2 mousePos = getMousePosition(window,gridObj);
-            Tile currentTile = gridObj->grid[mousePos.row][mousePos.col];
+            Tile *currentTile = &gridObj->grid[mousePos.row][mousePos.col];
             bool isSpecialTile =
-            currentTile.state==TileState::source||
-            currentTile.state==TileState::destination;
+            currentTile->state==TileState::source||
+            currentTile->state==TileState::destination;
 
             if(isSpecialTile)
             {
-                moveTile(window,gridObj,currentTile);
+                hasTileMoved = false;
+                movingTile = currentTile;
             }
             else{
-                //drawWalls(window,gridObj);
+                drawWalls(window,gridObj);
             }
 
+        }
+        if(event->type==sf::Event::MouseButtonPressed&&event->mouseButton.button==sf::Mouse::Left&&movingTile!=nullptr&&hasTileMoved)
+        {
+            movingTile = nullptr;
+        }
+        if(event->type==sf::Event::MouseMoved&&movingTile!=nullptr)
+        {
+            moveTile(window,gridObj);
         }
 
 }
