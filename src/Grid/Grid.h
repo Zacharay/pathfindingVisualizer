@@ -4,11 +4,13 @@
 class Grid
 {
 public:
-    static const int gridSize = 50;
-    Tile grid[gridSize][gridSize];
+    int gridSize = 50;
+    Tile **grid;
     Vector2 sourceCoords;
     Vector2 destCoords;
     int tileSize;
 public:
     Grid(int windowSize);
+    ~Grid();
+    void resizeGrid(int newGridSize,int windowSize);
 };

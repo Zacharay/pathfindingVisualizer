@@ -8,4 +8,5 @@ struct CONFIG{
     const char* algorithmsList[2]= {"Breadth First Search","Depth First Search"};
     int selectedAlgorithm=0;
     bool isStartClicked=false;
+    bool isResizeClicked = false;
 };

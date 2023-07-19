@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1689600140 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.cpp
+1689798920 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.cpp
 	"Grid.h"
 	<iostream>
 
@@ -8,7 +8,7 @@
 1689439620 source:/home/zachary/Projects/pathfindingVisualizer/src/main.cpp
 	"render.h"
 
-1689688051 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.h
+1689796355 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.h
 	"Vector2.h"
 	"Tile.h"
 
@@ -18,7 +18,7 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689792958 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689799118 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 	"Algorithms/algorithms.h"
@@ -214,17 +214,21 @@
 	<stdint.h>
 	"imstb_textedit.h"
 
-1689792182 source:/home/zachary/Projects/pathfindingVisualizer/src/GUI.cpp
+1689799092 source:/home/zachary/Projects/pathfindingVisualizer/src/GUI.cpp
 	"config.h"
 	<SFML/Graphics.hpp>
 	"libraries/imgui/imgui.h"
 	"libraries/imgui/imgui-SFML.h"
+	"Grid/Grid.h"
+	"render.h"
+	"iostream"
 
-1689792118 /home/zachary/Projects/pathfindingVisualizer/src/config.h
+1689799103 /home/zachary/Projects/pathfindingVisualizer/src/config.h
 
-1689778830 /home/zachary/Projects/pathfindingVisualizer/src/GUI.h
+1689798408 /home/zachary/Projects/pathfindingVisualizer/src/GUI.h
 	"config.h"
 	<SFML/Graphics.hpp>
+	"Grid/Grid.h"
 
 1689792443 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/DFS.cpp
 	"algorithms.h"

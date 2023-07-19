@@ -53,6 +53,12 @@ void processEvents(sf::RenderWindow &window,Grid &gridObj,CONFIG &config)
         {
             window.close();
         }
+        if(config.isResizeClicked)
+        {
+            gridObj.resizeGrid(config.gridSize,config.WINDOW_WIDTH);
+            renderGrid(&gridObj,&window);
+            config.isResizeClicked = false;
+        }
         if(config.isStartClicked&&!isAlgorithmStarted)
         {
             isAlgorithmStarted= true;
@@ -93,7 +99,7 @@ void renderLoop()
 
             ImGui::SFML::Update(window, deltaClock.restart());
 
-            renderImGuiWindow(config);
+            renderImGuiWindow(config,grid,window);
 
             ImGui::SFML::Render(window);
             window.display();
