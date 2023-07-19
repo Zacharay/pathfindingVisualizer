@@ -15,7 +15,7 @@ void initializeTileColors()
 {
     tileColors[TileState::notVisited] = sf::Color::White;
     tileColors[TileState::visited] = sf::Color::Cyan;
-    tileColors[TileState::active] = sf::Color::Yellow;
+    tileColors[TileState::path] = sf::Color::Yellow;
     tileColors[TileState::wall] =sf::Color::Black;
     tileColors[TileState::source]= sf::Color::Green;
     tileColors[TileState::destination]= sf::Color::Red;
@@ -58,11 +58,11 @@ void processEvents(sf::RenderWindow &window,Grid &gridObj,CONFIG &config)
             isAlgorithmStarted= true;
             if(config.selectedAlgorithm==0)
             {
-                visualizeBfs(&gridObj,&window);
+                visualizeBfs(&gridObj,&window,&config);
             }
             else if(config.selectedAlgorithm==1)
             {
-                visualizeDfs(&gridObj,&window);
+                visualizeDfs(&gridObj,&window,&config);
             }
 
         }

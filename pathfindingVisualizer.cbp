@@ -49,15 +49,19 @@
 		</Linker>
 		<Unit filename="cb.bmp" />
 		<Unit filename="src/Algorithms/BFS.cpp" />
-		<Unit filename="src/Algorithms/BFS.h" />
+		<Unit filename="src/Algorithms/DFS.cpp" />
+		<Unit filename="src/Algorithms/algorithms.h" />
 		<Unit filename="src/Algorithms/drawPath.cpp" />
 		<Unit filename="src/Algorithms/drawPath.h" />
+		<Unit filename="src/GUI.cpp" />
+		<Unit filename="src/GUI.h" />
 		<Unit filename="src/Grid/Grid.cpp" />
 		<Unit filename="src/Grid/Grid.h" />
 		<Unit filename="src/Grid/Tile.cpp" />
 		<Unit filename="src/Grid/Tile.h" />
 		<Unit filename="src/Grid/Vector2.cpp" />
 		<Unit filename="src/Grid/Vector2.h" />
+		<Unit filename="src/config.h" />
 		<Unit filename="src/libraries/imgui/imconfig-SFML.h" />
 		<Unit filename="src/libraries/imgui/imconfig.h" />
 		<Unit filename="src/libraries/imgui/imgui-SFML.cpp" />

@@ -1,5 +1,5 @@
 #include "algorithms.h"
-void visualizeBfs(Grid *gridObj,sf::RenderWindow *window){
+void visualizeBfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
 
     std::queue<Vector2> q;
 
@@ -42,12 +42,12 @@ void visualizeBfs(Grid *gridObj,sf::RenderWindow *window){
 
 
         renderGrid(gridObj,window);
-        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        std::this_thread::sleep_for(std::chrono::milliseconds(101-config->visualizationSpeed));
     }
     if(pathFound)
     {
             Tile *destParent = gridObj->grid[gridObj->destCoords.row][gridObj->destCoords.col].parentTile;
-            drawPath(gridObj,window,destParent);
+            drawPath(gridObj,window,destParent,config);
     }
 }
 

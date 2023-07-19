@@ -16,6 +16,7 @@ void renderImGuiWindow(CONFIG& config)
     ImGui::Begin("SFML ImGui Window", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
 
     ImGui::SliderInt("Grid Size", &config.gridSize, 10, 100);
+    ImGui::SliderInt("Speed" , &config.visualizationSpeed,1,100);
 
     ImGui::ListBox("Algorithms", &config.selectedAlgorithm, config.algorithmsList, IM_ARRAYSIZE(config.algorithmsList));
 

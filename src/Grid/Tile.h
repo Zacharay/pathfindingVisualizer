@@ -3,7 +3,7 @@ enum TileState
 {
     notVisited,
     visited,
-    active,
+    path,
     wall,
     source,
     destination

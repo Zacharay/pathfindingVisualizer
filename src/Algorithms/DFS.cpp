@@ -1,7 +1,7 @@
 #include "algorithms.h"
 #include <iostream>
 
-bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window)
+bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
     int dirX[]= {1,0,-1,0};
     int dirY[]= {0,-1,0,1};
@@ -24,10 +24,10 @@ bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window)
             gridObj->grid[new_row][new_col].state = TileState::visited;
             gridObj->grid[new_row][new_col].parentTile = &gridObj->grid[currentTilePos.row][currentTilePos.col];
 
-            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            std::this_thread::sleep_for(std::chrono::milliseconds(101-config->visualizationSpeed));
             renderGrid(gridObj,window);
 
-            if (dfs(Vector2(new_col,new_row),gridObj, window)) {
+            if (dfs(Vector2(new_col,new_row),gridObj, window,config)) {
                     // Path found!
                     return true;
             }
@@ -37,12 +37,12 @@ bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window)
     return false;
 }
 
-void visualizeDfs(Grid *gridObj,sf::RenderWindow *window)
+void visualizeDfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
-    bool pathFound = dfs(gridObj->sourceCoords,gridObj,window);
+    bool pathFound = dfs(gridObj->sourceCoords,gridObj,window,config);
     if(pathFound)
     {
         Tile *destParent = gridObj->grid[gridObj->destCoords.row][gridObj->destCoords.col].parentTile;
-        drawPath(gridObj,window,destParent);
+        drawPath(gridObj,window,destParent,config);
     }
 }

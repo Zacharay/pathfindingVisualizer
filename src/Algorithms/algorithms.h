@@ -8,6 +8,7 @@
 #include <thread>
 #include "drawPath.h"
 #include <SFML/Graphics.hpp>
+#include "../config.h"
 
-void visualizeBfs(Grid *gridObj,sf::RenderWindow *window);
-void visualizeDfs(Grid *gridObj,sf::RenderWindow *window);
+void visualizeBfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config);
+void visualizeDfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config);
