@@ -32,11 +32,18 @@ void moveTile(sf::RenderWindow *window,Grid *gridObj)
 {
         Vector2 mousePos = getMousePosition(window,gridObj);
         hasTileMoved=true;
+
+        bool tilePosChanged= false;
+
+
+
         if(movingTile->state==TileState::source)
         {
             Vector2 srcCoords = gridObj->sourceCoords;
             gridObj->grid[srcCoords.row][srcCoords.col].state=TileState::notVisited;
             gridObj->sourceCoords=mousePos;
+            if(movingTile != &gridObj->grid[mousePos.row][mousePos.col])tilePosChanged = true;
+
             movingTile = &gridObj->grid[mousePos.row][mousePos.col];
             movingTile->state= TileState::source;
         }
@@ -46,10 +53,13 @@ void moveTile(sf::RenderWindow *window,Grid *gridObj)
             gridObj->grid[destCoords.row][destCoords.col].state=TileState::notVisited;
             gridObj->destCoords=mousePos;
 
+            if(movingTile != &gridObj->grid[mousePos.row][mousePos.col])tilePosChanged = true;
+
             movingTile = &gridObj->grid[mousePos.row][mousePos.col];
             movingTile->state= TileState::destination;
         }
 
+        if(tilePosChanged)renderGrid(gridObj,window);
 
 }
 
@@ -76,6 +86,7 @@ void handleMouseEvents(Grid *gridObj,sf::RenderWindow *window,sf::Event *event){
         if(event->type==sf::Event::MouseButtonPressed&&event->mouseButton.button==sf::Mouse::Left&&movingTile!=nullptr&&hasTileMoved)
         {
             movingTile = nullptr;
+            renderGrid(gridObj,window);
         }
         if(event->type==sf::Event::MouseMoved&&movingTile!=nullptr)
         {

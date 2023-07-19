@@ -18,7 +18,7 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689690261 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689777376 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 	"Algorithms/BFS.h"
@@ -65,7 +65,7 @@
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 
-1689684280 source:/home/zachary/Projects/pathfindingVisualizer/src/mouseEventHandler.cpp
+1689778196 source:/home/zachary/Projects/pathfindingVisualizer/src/mouseEventHandler.cpp
 	"mouseEventHandler.h"
 	"Grid/Vector2.h"
 	"render.h"
@@ -216,4 +216,12 @@
 	"imgui_internal.h"
 	<stdint.h>
 	"imstb_textedit.h"
+
+1689778777 source:/home/zachary/Projects/pathfindingVisualizer/src/GUI.cpp
+	"config.h"
+	<SFML/Graphics.hpp>
+	"libraries/imgui/imgui.h"
+	"libraries/imgui/imgui-SFML.h"
+
+1689778823 /home/zachary/Projects/pathfindingVisualizer/src/config.h
 

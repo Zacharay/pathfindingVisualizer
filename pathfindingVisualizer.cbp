@@ -16,6 +16,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-pthread" />
+					<Add option="-lGL" />
 					<Add library="sfml-graphics" />
 					<Add library="sfml-window" />
 					<Add library="sfml-system" />
@@ -32,6 +33,7 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="-pthread" />
+					<Add option="-lGL" />
 					<Add library="sfml-graphics" />
 					<Add library="sfml-window" />
 					<Add library="sfml-system" />
@@ -40,7 +42,11 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="src/libraries/imgui" />
 		</Compiler>
+		<Linker>
+			<Add directory="src/libraries/imgui" />
+		</Linker>
 		<Unit filename="cb.bmp" />
 		<Unit filename="src/Algorithms/BFS.cpp" />
 		<Unit filename="src/Algorithms/BFS.h" />
@@ -52,9 +58,24 @@
 		<Unit filename="src/Grid/Tile.h" />
 		<Unit filename="src/Grid/Vector2.cpp" />
 		<Unit filename="src/Grid/Vector2.h" />
-		<Unit filename="src/drawWalls.cpp" />
-		<Unit filename="src/drawWalls.h" />
+		<Unit filename="src/libraries/imgui/imconfig-SFML.h" />
+		<Unit filename="src/libraries/imgui/imconfig.h" />
+		<Unit filename="src/libraries/imgui/imgui-SFML.cpp" />
+		<Unit filename="src/libraries/imgui/imgui-SFML.h" />
+		<Unit filename="src/libraries/imgui/imgui-SFML_export.h" />
+		<Unit filename="src/libraries/imgui/imgui.cpp" />
+		<Unit filename="src/libraries/imgui/imgui.h" />
+		<Unit filename="src/libraries/imgui/imgui_demo.cpp" />
+		<Unit filename="src/libraries/imgui/imgui_draw.cpp" />
+		<Unit filename="src/libraries/imgui/imgui_internal.h" />
+		<Unit filename="src/libraries/imgui/imgui_tables.cpp" />
+		<Unit filename="src/libraries/imgui/imgui_widgets.cpp" />
+		<Unit filename="src/libraries/imgui/imstb_rectpack.h" />
+		<Unit filename="src/libraries/imgui/imstb_textedit.h" />
+		<Unit filename="src/libraries/imgui/imstb_truetype.h" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/mouseEventHandler.cpp" />
+		<Unit filename="src/mouseEventHandler.h" />
 		<Unit filename="src/render.cpp" />
 		<Unit filename="src/render.h" />
 		<Extensions />
