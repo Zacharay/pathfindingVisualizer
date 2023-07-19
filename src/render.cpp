@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Grid/Grid.h"
-#include "Algorithms/BFS.h"
+#include "Algorithms/algorithms.h"
 #include <thread>
 #include <iostream>
 #include "mouseEventHandler.h"
@@ -42,8 +42,7 @@ void renderGrid(Grid *gridObj,sf::RenderWindow *window)
     }
     window->display();
 }
-
-bool stopMouseEvents = false;
+bool isAlgorithmStarted = false;
 void processEvents(sf::RenderWindow &window,Grid &gridObj,CONFIG &config)
 {
     sf::Event event;
@@ -54,10 +53,18 @@ void processEvents(sf::RenderWindow &window,Grid &gridObj,CONFIG &config)
         {
             window.close();
         }
-        if(config.isStartClicked)
+        if(config.isStartClicked&&!isAlgorithmStarted)
         {
-            stopMouseEvents = true;
-            visualizeBfs(&gridObj,&window);
+            isAlgorithmStarted= true;
+            if(config.selectedAlgorithm==0)
+            {
+                visualizeBfs(&gridObj,&window);
+            }
+            else if(config.selectedAlgorithm==1)
+            {
+                visualizeDfs(&gridObj,&window);
+            }
+
         }
         if(!config.isStartClicked&&!isMouseOverImGuiWindow(&window))
         {
@@ -74,8 +81,6 @@ void renderLoop()
     sf::RenderWindow window(sf::VideoMode(config.WINDOW_WIDTH, config.WINDOW_HEIGHT), "SFML window");
     Grid grid(config.WINDOW_WIDTH);
     initializeTileColors();
-
-
 
     ImGui::SFML::Init(window);
 

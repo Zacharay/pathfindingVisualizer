@@ -18,31 +18,26 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689777376 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689782789 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
-	"Algorithms/BFS.h"
+	"Algorithms/algorithms.h"
 	<thread>
 	<iostream>
 	"mouseEventHandler.h"
 	<SFML/Graphics.hpp>
 	"libraries/imgui/imgui.h"
 	"libraries/imgui/imgui-SFML.h"
-	<string>
+	"config.h"
+	"GUI.h"
 
 1689525554 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.h
 
 1689525563 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.cpp
 	"Vector2.h"
 
-1689601401 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/BFS.cpp
-	"../Grid/Grid.h"
-	"queue"
-	"../Grid/Vector2.h"
-	"../render.h"
-	<chrono>
-	<thread>
-	"drawPath.h"
+1689780752 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/BFS.cpp
+	"algorithms.h"
 
 1689587775 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/BFS.h
 	"../Grid/Grid.h"
@@ -224,4 +219,22 @@
 	"libraries/imgui/imgui-SFML.h"
 
 1689778823 /home/zachary/Projects/pathfindingVisualizer/src/config.h
+
+1689778830 /home/zachary/Projects/pathfindingVisualizer/src/GUI.h
+	"config.h"
+	<SFML/Graphics.hpp>
+
+1689782682 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/DFS.cpp
+	"algorithms.h"
+	<iostream>
+
+1689780807 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/algorithms.h
+	"../Grid/Grid.h"
+	"queue"
+	"../Grid/Vector2.h"
+	"../render.h"
+	<chrono>
+	<thread>
+	"drawPath.h"
+	<SFML/Graphics.hpp>
 

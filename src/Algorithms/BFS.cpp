@@ -1,13 +1,4 @@
-#pragma once
-#include "../Grid/Grid.h"
-#include "queue"
-#include "../Grid/Vector2.h"
-#include "../render.h"
-#include <chrono>
-#include <thread>
-#include "drawPath.h"
-
-
+#include "algorithms.h"
 void visualizeBfs(Grid *gridObj,sf::RenderWindow *window){
 
     std::queue<Vector2> q;
