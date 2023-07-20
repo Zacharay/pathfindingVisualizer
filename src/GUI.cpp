@@ -22,8 +22,8 @@ void renderImGuiWindow(CONFIG *config,Grid *gridObj,sf::RenderWindow *window)
 
     ImGui::Text("Grid Size");
     ImGui::RadioButton("Small", &config->gridSize, 25);
-    ImGui::RadioButton("Medium", &config->gridSize, 50);
-    ImGui::RadioButton("Big", &config->gridSize, 100);
+    ImGui::RadioButton("Medium", &config->gridSize, 45);
+    ImGui::RadioButton("Big", &config->gridSize, 75);
 
     if (ImGui::Button("Resize"))
     {

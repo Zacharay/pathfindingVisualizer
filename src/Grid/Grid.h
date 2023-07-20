@@ -4,7 +4,7 @@
 class Grid
 {
 public:
-    int gridSize = 50;
+    int gridSize = 45;
     Tile **grid;
     Vector2 sourceCoords;
     Vector2 destCoords;

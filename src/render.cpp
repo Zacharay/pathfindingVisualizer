@@ -2,11 +2,12 @@
 #include "Grid/Grid.h"
 #include "Algorithms/algorithms.h"
 #include <thread>
+#include <atomic>
 #include <iostream>
 #include "mouseEventHandler.h"
 #include <SFML/Graphics.hpp>
-#include "libraries/imgui/imgui.h";
-#include "libraries/imgui/imgui-SFML.h";
+#include "libraries/imgui/imgui.h"
+#include "libraries/imgui/imgui-SFML.h"
 #include "config.h"
 #include "GUI.h"
 
@@ -40,6 +41,7 @@ void renderGrid(Grid *gridObj,sf::RenderWindow *window)
             window->draw(tile);
         }
     }
+
     window->display();
 }
 bool isAlgorithmStarted = false;
@@ -70,6 +72,10 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
             {
                 visualizeDfs(gridObj,window,config);
             }
+            else if(config->selectedAlgorithm==2)
+            {
+                visualizeHamiltonian(gridObj,window,config);
+            }
 
         }
         if(!config->isStartClicked&&!isMouseOverImGuiWindow(window,config))
@@ -91,8 +97,8 @@ void renderLoop()
     ImGui::SFML::Init(window);
 
     renderGrid(&grid,&window);
-
     sf::Clock deltaClock;
+
     while (window.isOpen())
     {
             processEvents(&window,&grid,&config);
