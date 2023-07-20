@@ -11,15 +11,19 @@ bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window,CONFIG *c
         int new_col = currentTilePos.col + dirX[i];
         int new_row = currentTilePos.row + dirY[i];
 
+
+        bool isTileOnBoard = new_col>=0&&new_col<gridObj->gridSize&&new_row>=0&&new_row<gridObj->gridSize;
+        if(!isTileOnBoard)continue;
+
+
         if(gridObj->grid[new_row][new_col].state==TileState::destination)
         {
             gridObj->grid[new_row][new_col].parentTile = &gridObj->grid[currentTilePos.row][currentTilePos.col];
             return true;
         }
 
-        if(new_col>=0&&new_col<gridObj->gridSize&&
-            new_row>=0&&new_row<gridObj->gridSize&&
-            gridObj->grid[new_row][new_col].state==TileState::notVisited)
+
+        if(gridObj->grid[new_row][new_col].state==TileState::notVisited)
         {
             gridObj->grid[new_row][new_col].state = TileState::visited;
             gridObj->grid[new_row][new_col].parentTile = &gridObj->grid[currentTilePos.row][currentTilePos.col];
@@ -28,7 +32,7 @@ bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window,CONFIG *c
             renderGrid(gridObj,window);
 
             if (dfs(Vector2(new_col,new_row),gridObj, window,config)) {
-                    // Path found!
+                    // Path was found!
                     return true;
             }
 
@@ -42,7 +46,7 @@ void visualizeDfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
     bool pathFound = dfs(gridObj->sourceCoords,gridObj,window,config);
     if(pathFound)
     {
-        Tile *destParent = gridObj->grid[gridObj->destCoords.row][gridObj->destCoords.col].parentTile;
-        drawPath(gridObj,window,destParent,config);
+            Tile *destParent = gridObj->grid[gridObj->destCoords.row][gridObj->destCoords.col].parentTile;
+            drawPath(gridObj,window,destParent,config);
     }
 }

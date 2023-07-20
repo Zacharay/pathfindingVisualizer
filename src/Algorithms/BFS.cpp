@@ -6,13 +6,13 @@ void visualizeBfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
     q.push(gridObj->sourceCoords);
 
     bool pathFound = false;
+    int dirX[] = {0,0,1,-1};
+    int dirY[] = {1,-1,0,0};
 
     while(!q.empty()&&!pathFound)
     {
         Vector2 currentTile = q.front();
         q.pop();
-        int dirX[] = {0,0,1,-1};
-        int dirY[] = {1,-1,0,0};
 
         int parent_col = currentTile.col;
         int parent_row = currentTile.row;
@@ -22,16 +22,17 @@ void visualizeBfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
             int new_col = parent_col+dirX[i];
             int new_row = parent_row+dirY[i];
 
-            if(new_col == gridObj->destCoords.col&&new_row==gridObj->destCoords.row)
+            bool isTileOnBoard = new_col>=0&&new_col<gridObj->gridSize&&new_row>=0&&new_row<gridObj->gridSize;;
+            if(!isTileOnBoard)continue;
+
+            if(gridObj->grid[new_row][new_col].state==TileState::destination);
             {
                 pathFound=true;
-                gridObj->grid[new_row][new_col].parentTile = &gridObj->grid[parent_row][parent_col];
-                break;
+                //gridObj->grid[new_row][new_col].parentTile = &gridObj->grid[parent_row][parent_col];
+                //break;
             }
 
-            if(new_col>=0&&new_col<gridObj->gridSize&&
-               new_row>=0&&new_row<gridObj->gridSize&&
-               gridObj->grid[new_row][new_col].state==TileState::notVisited)
+            if(gridObj->grid[new_row][new_col].state==TileState::notVisited)
             {
                 q.push(Vector2(new_col,new_row));
                 gridObj->grid[new_row][new_col].state = TileState::visited;

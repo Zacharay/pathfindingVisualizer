@@ -43,38 +43,38 @@ void renderGrid(Grid *gridObj,sf::RenderWindow *window)
     window->display();
 }
 bool isAlgorithmStarted = false;
-void processEvents(sf::RenderWindow &window,Grid &gridObj,CONFIG &config)
+void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
 {
     sf::Event event;
-    while (window.pollEvent(event))
+    while (window->pollEvent(event))
     {
         ImGui::SFML::ProcessEvent(event);
         if (event.type == sf::Event::Closed)
         {
-            window.close();
+            window->close();
         }
-        if(config.isResizeClicked)
+        if(config->isResizeClicked)
         {
-            gridObj.resizeGrid(config.gridSize,config.WINDOW_WIDTH);
-            renderGrid(&gridObj,&window);
-            config.isResizeClicked = false;
+            gridObj->resizeGrid(config->gridSize,config->WINDOW_WIDTH);
+            renderGrid(gridObj,window);
+            config->isResizeClicked = false;
         }
-        if(config.isStartClicked&&!isAlgorithmStarted)
+        if(config->isStartClicked&&!isAlgorithmStarted)
         {
             isAlgorithmStarted= true;
-            if(config.selectedAlgorithm==0)
+            if(config->selectedAlgorithm==0)
             {
-                visualizeBfs(&gridObj,&window,&config);
+                visualizeBfs(gridObj,window,config);
             }
-            else if(config.selectedAlgorithm==1)
+            else if(config->selectedAlgorithm==1)
             {
-                visualizeDfs(&gridObj,&window,&config);
+                visualizeDfs(gridObj,window,config);
             }
 
         }
-        if(!config.isStartClicked&&!isMouseOverImGuiWindow(&window))
+        if(!config->isStartClicked&&!isMouseOverImGuiWindow(window,config))
         {
-            handleMouseEvents(&gridObj,&window,&event);
+            handleMouseEvents(gridObj,window,&event);
         }
 
     }
@@ -84,7 +84,7 @@ void processEvents(sf::RenderWindow &window,Grid &gridObj,CONFIG &config)
 void renderLoop()
 {
     CONFIG config;
-    sf::RenderWindow window(sf::VideoMode(config.WINDOW_WIDTH, config.WINDOW_HEIGHT), "SFML window");
+    sf::RenderWindow window(sf::VideoMode(config.WINDOW_WIDTH+config.GUI_WIDTH, config.WINDOW_HEIGHT), "SFML window");
     Grid grid(config.WINDOW_WIDTH);
     initializeTileColors();
 
@@ -95,11 +95,11 @@ void renderLoop()
     sf::Clock deltaClock;
     while (window.isOpen())
     {
-            processEvents(window,grid,config);
+            processEvents(&window,&grid,&config);
 
             ImGui::SFML::Update(window, deltaClock.restart());
 
-            renderImGuiWindow(config,grid,window);
+            renderImGuiWindow(&config,&grid,&window);
 
             ImGui::SFML::Render(window);
             window.display();
