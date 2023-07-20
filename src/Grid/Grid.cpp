@@ -1,7 +1,7 @@
 #include "Grid.h"
 #include <iostream>
 Grid::Grid(int windowSize)
-:sourceCoords(5,5),destCoords(5,8)
+:sourceCoords(5,5),destCoords(10,5)
 {
     grid = new Tile*[gridSize];
     for(int i=0;i<gridSize;i++)

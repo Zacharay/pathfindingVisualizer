@@ -15,18 +15,19 @@ bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window,CONFIG *c
         bool isTileOnBoard = new_col>=0&&new_col<gridObj->gridSize&&new_row>=0&&new_row<gridObj->gridSize;
         if(!isTileOnBoard)continue;
 
+        Tile *newTile = &gridObj->grid[new_row][new_col];
 
-        if(gridObj->grid[new_row][new_col].state==TileState::destination)
+        if(newTile->state==TileState::destination)
         {
-            gridObj->grid[new_row][new_col].parentTile = &gridObj->grid[currentTilePos.row][currentTilePos.col];
+            newTile->parentTile = &gridObj->grid[currentTilePos.row][currentTilePos.col];
             return true;
         }
 
 
-        if(gridObj->grid[new_row][new_col].state==TileState::notVisited)
+        if(newTile->state==TileState::notVisited)
         {
-            gridObj->grid[new_row][new_col].state = TileState::visited;
-            gridObj->grid[new_row][new_col].parentTile = &gridObj->grid[currentTilePos.row][currentTilePos.col];
+            newTile->state = TileState::visited;
+            newTile->parentTile = &gridObj->grid[currentTilePos.row][currentTilePos.col];
 
             std::this_thread::sleep_for(std::chrono::milliseconds(101-config->visualizationSpeed));
             renderGrid(gridObj,window);
