@@ -31,6 +31,7 @@ bool hasTileMoved = false;
 void moveTile(sf::RenderWindow *window,Grid *gridObj)
 {
         Vector2 mousePos = getMousePosition(window,gridObj);
+        if(gridObj->grid[mousePos.row][mousePos.col].state ==TileState::wall)return;
         hasTileMoved=true;
 
         bool tilePosChanged= false;

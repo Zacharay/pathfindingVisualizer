@@ -13,4 +13,6 @@ public:
     Grid(int windowSize);
     ~Grid();
     void resizeGrid(int newGridSize,int windowSize);
+    void clearWalls();
+    void clearPath();
 };

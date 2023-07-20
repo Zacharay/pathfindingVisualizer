@@ -32,7 +32,7 @@ void renderImGuiWindow(CONFIG *config,Grid *gridObj,sf::RenderWindow *window)
 
     ImGui::SliderInt("Speed" , &config->visualizationSpeed,1,100);
 
-    ImGui::ListBox("Algorithms", &config->selectedAlgorithm, config->algorithmsList, IM_ARRAYSIZE(config->algorithmsList));
+    ImGui::Combo("Algorithms", &config->selectedAlgorithm, config->algorithmsList, IM_ARRAYSIZE(config->algorithmsList));
 
     if (ImGui::Button("Start"))
     {

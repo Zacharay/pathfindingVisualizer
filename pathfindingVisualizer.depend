@@ -18,7 +18,7 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689865566 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689884566 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 	"Algorithms/algorithms.h"
@@ -64,7 +64,7 @@
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 
-1689778196 source:/home/zachary/Projects/pathfindingVisualizer/src/mouseEventHandler.cpp
+1689885047 source:/home/zachary/Projects/pathfindingVisualizer/src/mouseEventHandler.cpp
 	"mouseEventHandler.h"
 	"Grid/Vector2.h"
 	"render.h"
@@ -216,7 +216,7 @@
 	<stdint.h>
 	"imstb_textedit.h"
 
-1689866410 source:/home/zachary/Projects/pathfindingVisualizer/src/GUI.cpp
+1689884534 source:/home/zachary/Projects/pathfindingVisualizer/src/GUI.cpp
 	"config.h"
 	<SFML/Graphics.hpp>
 	"libraries/imgui/imgui.h"
@@ -247,9 +247,21 @@
 	<SFML/Graphics.hpp>
 	"../config.h"
 
-1689874560 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/hamiltonianCycle.cpp
+1689886210 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/hamiltonianCycle.cpp
 	"algorithms.h"
 	<vector>
 	<random>
 	<iostream>
+	"drawFrame.h"
+
+1689884869 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/drawFrame.h
+	"../Grid/Grid.h"
+	"SFML/Graphics.hpp"
+	"../config.h"
+
+1689886602 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/drawFrame.cpp
+	"drawFrame.h"
+	"../render.h"
+	<thread>
+	<chrono>
 

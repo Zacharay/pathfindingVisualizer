@@ -64,4 +64,7 @@ void Grid::resizeGrid(int newGridSize,int windowSize)
     grid = newGrid;
     tileSize = windowSize/gridSize;
 }
+void Grid::clearWalls()
+{
 
+}
