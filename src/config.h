@@ -9,6 +9,9 @@ struct CONFIG{
     int visualizationSpeed = 100;//max 100 min 1
     const char* algorithmsList[3]= {"Breadth First Search","Depth First Search","Hamiltonian Cycle"};
     int selectedAlgorithm=0;
-    bool isStartClicked=false;
+
+    //buttons
+    bool isStartClicked= false;
+    bool isClearWallsClicked = false;
     bool isResizeClicked = false;
 };

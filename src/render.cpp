@@ -61,24 +61,32 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
             renderGrid(gridObj,window);
             config->isResizeClicked = false;
         }
+        if(config->isClearWallsClicked)
+        {
+            gridObj->clearWalls();
+            renderGrid(gridObj,window);
+            config->isClearWallsClicked = false;
+        }
         if(config->isStartClicked&&!isAlgorithmStarted)
         {
             isAlgorithmStarted= true;
             if(config->selectedAlgorithm==0)
             {
+                gridObj->clearPath();
                 visualizeBfs(gridObj,window,config);
             }
             else if(config->selectedAlgorithm==1)
             {
+                gridObj->clearPath();
                 visualizeDfs(gridObj,window,config);
+
             }
             else if(config->selectedAlgorithm==2)
             {
                 visualizeHamiltonian(gridObj,window,config);
-                isAlgorithmStarted = false;
-                config->isStartClicked = false;
             }
-
+            isAlgorithmStarted = false;
+            config->isStartClicked = false;
         }
         if(!config->isStartClicked&&!isMouseOverImGuiWindow(window,config))
         {

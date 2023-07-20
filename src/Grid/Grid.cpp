@@ -1,7 +1,7 @@
 #include "Grid.h"
 #include <iostream>
 Grid::Grid(int windowSize)
-:sourceCoords(5,5),destCoords(10,5)
+:sourceCoords(12,12),destCoords(10,5)
 {
     grid = new Tile*[gridSize];
     for(int i=0;i<gridSize;i++)
@@ -66,5 +66,27 @@ void Grid::resizeGrid(int newGridSize,int windowSize)
 }
 void Grid::clearWalls()
 {
-
+    for(int row=0;row<gridSize;row++)
+    {
+        for(int col=0;col<gridSize;col++)
+        {
+            if(grid[row][col].state==TileState::wall)
+            {
+                grid[row][col].state = TileState::notVisited;
+            }
+        }
+    }
+}
+void Grid::clearPath()
+{
+    for(int row=0;row<gridSize;row++)
+    {
+        for(int col=0;col<gridSize;col++)
+        {
+            if(grid[row][col].state==TileState::visited||grid[row][col].state==TileState::path)
+            {
+                grid[row][col].state = TileState::notVisited;
+            }
+        }
+    }
 }

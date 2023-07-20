@@ -34,10 +34,15 @@ void renderImGuiWindow(CONFIG *config,Grid *gridObj,sf::RenderWindow *window)
 
     ImGui::Combo("Algorithms", &config->selectedAlgorithm, config->algorithmsList, IM_ARRAYSIZE(config->algorithmsList));
 
+    if (ImGui::Button("Clear Walls"))
+    {
+        config->isClearWallsClicked = true;
+    }
     if (ImGui::Button("Start"))
     {
         config->isStartClicked = true;
     }
+
 
     ImGui::End();
 }
