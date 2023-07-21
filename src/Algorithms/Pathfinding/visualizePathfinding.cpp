@@ -5,11 +5,12 @@ void visualizeDfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config);
 
 void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
-    switch(config->selectedPattern)
+    if(config->selectedAlgorithm==Algorithms::BFS)
     {
-        case Algorithms::BFS:
-            break;
-        case Algorithms::DFS:
-            break;
+
+    }
+    else if(config->selectedAlgorithm==Algorithms::DFS)
+    {
+
     }
 }

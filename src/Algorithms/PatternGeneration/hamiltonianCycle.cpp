@@ -2,7 +2,6 @@
 #include <vector>
 #include <random>
 #include <iostream>
-#include "../Others/drawFrame.h"
 #include "algorithm"
 
 
@@ -43,17 +42,14 @@ void kruskalMst(Grid *gridObj,std::vector<Vector2>*walls)
 
     }
 
-
     std::random_device rd;
     std::mt19937 gen(rd());
     std::shuffle(wallsCopy.begin(), wallsCopy.end(), gen);
-    for(int i=0;i<wallsCopy.size();i++)
-    {
-        std::cout<<wallsCopy[i].col<<std::endl;
-    }
+
     std::vector<int>randomOrder = {0,1,2,3};
     int dirX[] = {0,0,2,-2};
     int dirY[] = {2,-2,0,0};
+    int t = 0;
     while(!wallsCopy.empty())
     {
         Vector2 parentTile = wallsCopy.back();
@@ -62,7 +58,7 @@ void kruskalMst(Grid *gridObj,std::vector<Vector2>*walls)
         int parentIdx = convertCoordsToIndex(parentTile,nodesPerRow);
         int parentRep = findDSU(parentIdx,rep);
         std::shuffle(randomOrder.begin(),randomOrder.end(),gen);
-        /*for(int i=0;i<4;i++)
+        for(int i=0;i<4;i++)
         {
             int dirIdx = randomOrder[i];
 
@@ -97,7 +93,7 @@ void kruskalMst(Grid *gridObj,std::vector<Vector2>*walls)
                 }
             }
 
-        }*/
+        }
     }
     delete []rep;
 }
@@ -112,14 +108,12 @@ void generateInitialTiles(Grid *gridObj,std::vector<Vector2>*walls)
         }
 }
 
-
-
 void generateHamiltonian(Grid *gridObj,std::vector<Vector2>*walls)
 {
+    std::vector<Vector2> frame = generateFrame(gridObj);
 
-    generateFrame(gridObj,walls);
     generateInitialTiles(gridObj,walls);
 
     kruskalMst(gridObj,walls);
-
+    walls->insert(walls->begin(),frame.begin(),frame.end());
 };

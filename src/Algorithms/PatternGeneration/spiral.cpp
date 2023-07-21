@@ -37,33 +37,18 @@ void spiralOneIteration(int gridSize,std::vector<Vector2>*spiralPoints,int offse
     spiralPoints->push_back(dirElement);
 }
 
-void generateOuterSpiral(Grid *gridObj,std::vector<Vector2>*spiralPoints)
+void generateSpiral(bool isInnerSpiral,Grid *gridObj,std::vector<Vector2>*walls)
 {
     int i=0;
     while(i*2<gridObj->gridSize)
     {
-        spiralOneIteration(gridObj->gridSize-i,spiralPoints,i);
+        spiralOneIteration(gridObj->gridSize-i,walls,i);
         i+=2;
     }
-    spiralPoints->pop_back();
+    walls->pop_back();
 
+    if(isInnerSpiral)std::reverse(walls->begin(),walls->end());
 }
 
-void visualizeSpiral(Grid *gridObj,sf::RenderWindow *window,CONFIG *config,bool spiralInner)
-{
-    std::vector<Vector2>spiralPoints;
-    generateOuterSpiral(gridObj,&spiralPoints);
-    if(spiralInner)std::reverse(spiralPoints.begin(),spiralPoints.end());
-    for(int i=0;i<spiralPoints.size();i++)
-    {
-        Vector2 coords = spiralPoints[i];
-        gridObj->grid[coords.row][coords.col].state = TileState::wall;
-        if(i%3==0)
-        {
-            renderGrid(gridObj,window);
-            std::this_thread::sleep_for(std::chrono::milliseconds(101-config->visualizationSpeed));
-        }
-    }
-    renderGrid(gridObj,window);
-}
+
 
