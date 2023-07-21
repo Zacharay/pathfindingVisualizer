@@ -1,6 +1,6 @@
-#include "algorithms.h"
+#include "visualizePathfinding.h"
 #include <iostream>
-bool BFS(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
+bool BfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
 
     std::queue<Vector2> q;
 
@@ -47,7 +47,7 @@ bool BFS(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
     return false;
 }
 void visualizeBfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
-    bool pathFound = BFS(gridObj,window,config);
+    bool pathFound = BfsAlgorithm(gridObj,window,config);
     if(pathFound)
     {
             Tile *destParent = gridObj->grid[gridObj->destCoords.row][gridObj->destCoords.col].parentTile;

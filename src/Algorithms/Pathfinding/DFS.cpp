@@ -1,4 +1,4 @@
-#include "algorithms.h"
+#include "visualizePathfinding.h"
 #include <iostream>
 
 bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window,CONFIG *config)

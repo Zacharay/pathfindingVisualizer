@@ -18,10 +18,11 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689941806 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689945493 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
-	"Algorithms/algorithms.h"
+	"Algorithms/PatternGeneration/visualizePattern.h"
+	"Algorithms/Pathfinding/visualizePathfinding.h"
 	<thread>
 	<atomic>
 	<iostream>
@@ -216,7 +217,7 @@
 	<stdint.h>
 	"imstb_textedit.h"
 
-1689887341 source:/home/zachary/Projects/pathfindingVisualizer/src/GUI.cpp
+1689945411 source:/home/zachary/Projects/pathfindingVisualizer/src/GUI.cpp
 	"config.h"
 	<SFML/Graphics.hpp>
 	"libraries/imgui/imgui.h"
@@ -225,7 +226,7 @@
 	"render.h"
 	"iostream"
 
-1689941840 /home/zachary/Projects/pathfindingVisualizer/src/config.h
+1689945258 /home/zachary/Projects/pathfindingVisualizer/src/config.h
 
 1689850942 /home/zachary/Projects/pathfindingVisualizer/src/GUI.h
 	"config.h"
@@ -236,16 +237,7 @@
 	"algorithms.h"
 	<iostream>
 
-1689941776 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/algorithms.h
-	"../Grid/Grid.h"
-	"queue"
-	"../Grid/Vector2.h"
-	"../render.h"
-	<chrono>
-	<thread>
-	"drawPath.h"
-	<SFML/Graphics.hpp>
-	"../config.h"
+1689944544 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/algorithms.h
 
 1689886739 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/hamiltonianCycle.cpp
 	"algorithms.h"
@@ -267,5 +259,89 @@
 
 1689942173 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/spiral.cpp
 	"algorithms.h"
+	<vector>
+
+1689944237 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/algorithms.cpp
+
+1689944955 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/drawFrame.cpp
+	"drawFrame.h"
+	"../../render.h"
+	<thread>
+	<chrono>
+
+1689944867 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/drawFrame.h
+	"../../Grid/Grid.h"
+	"SFML/Graphics.hpp"
+	"../../config.h"
+
+1689944968 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/drawPath.cpp
+	"drawPath.h"
+	"../../render.h"
+	<thread>
+	<chrono>
+	<vector>
+
+1689944961 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/drawPath.h
+	"SFML/Graphics.hpp"
+	"../../Grid/Grid.h"
+	"../../config.h"
+
+1689944839 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/DFS.cpp
+	"visualizePathfinding.h"
+	<iostream>
+
+1689945150 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.h
+	"../../Grid/Grid.h"
+	"queue"
+	"../../Grid/Vector2.h"
+	"../../render.h"
+	<chrono>
+	<thread>
+	"../Others/drawPath.h"
+	<SFML/Graphics.hpp>
+	"../../config.h"
+
+1689945115 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
+	"visualizePathfinding.h"
+
+1689946918 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/hamiltonianCycle.cpp
+	"visualizePattern.h"
+	<vector>
+	<random>
+	<iostream>
+	"../Others/drawFrame.h"
+	"algorithm"
+
+1689946101 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.h
+	"../../Grid/Grid.h"
+	"queue"
+	"../../Grid/Vector2.h"
+	"../../render.h"
+	<chrono>
+	<thread>
+	"../Others/generateFrame.h"
+	<SFML/Graphics.hpp>
+	"../../config.h"
+
+1689944858 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/spiral.cpp
+	"visualizePattern.h"
+	<vector>
+
+1689946815 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.cpp
+	"visualizePattern.h"
+	<vector>
+	<iostream>
+
+1689945220 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/BFS.cpp
+	"visualizePathfinding.h"
+	<iostream>
+
+1689946090 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/generateFrame.cpp
+	"generateFrame.h"
+
+1689946084 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/generateFrame.h
+	"../../Grid/Grid.h"
+	"SFML/Graphics.hpp"
+	"../../config.h"
 	<vector>
 

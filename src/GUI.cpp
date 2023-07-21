@@ -31,7 +31,11 @@ void renderImGuiWindow(CONFIG *config,Grid *gridObj,sf::RenderWindow *window)
     }
 
     ImGui::SliderInt("Speed" , &config->visualizationSpeed,1,100);
-
+    ImGui::Combo("Patterns", &config->selectedPattern, config->patternList, IM_ARRAYSIZE(config->patternList));
+    if (ImGui::Button("Generate Pattern"))
+    {
+        config->isPatternStarted = true;
+    }
     ImGui::Combo("Algorithms", &config->selectedAlgorithm, config->algorithmsList, IM_ARRAYSIZE(config->algorithmsList));
 
     if (ImGui::Button("Clear Walls"))
@@ -40,7 +44,7 @@ void renderImGuiWindow(CONFIG *config,Grid *gridObj,sf::RenderWindow *window)
     }
     if (ImGui::Button("Start"))
     {
-        config->isStartClicked = true;
+        config->isPathfindingStarted = true;
     }
 
 

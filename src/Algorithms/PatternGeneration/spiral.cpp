@@ -1,4 +1,4 @@
-#include "algorithms.h"
+#include "visualizePattern.h"
 #include <vector>
 
 void spiralOneIteration(int gridSize,std::vector<Vector2>*spiralPoints,int offset)

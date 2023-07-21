@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "Grid/Grid.h"
-#include "Algorithms/algorithms.h"
+#include "Algorithms/PatternGeneration/visualizePattern.h"
+#include "Algorithms/Pathfinding/visualizePathfinding.h"
 #include <thread>
 #include <atomic>
 #include <iostream>
@@ -59,6 +60,18 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
         {
             gridObj->resizeGrid(config->gridSize,config->WINDOW_WIDTH);
             renderGrid(gridObj,window);
+            switch(gridObj->gridSize)
+            {
+                case 25:
+                    config->substep= 1;
+                    break;
+                case 45:
+                    config->substep=2;
+                    break;
+                case 75:
+                    config->substep=3;
+                    break;
+            }
             config->isResizeClicked = false;
         }
         if(config->isClearWallsClicked)
@@ -67,36 +80,22 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
             renderGrid(gridObj,window);
             config->isClearWallsClicked = false;
         }
-        if(config->isStartClicked&&!isAlgorithmStarted)
+        if(config->isPatternStarted&&!isAlgorithmStarted)
         {
             isAlgorithmStarted= true;
-            if(config->selectedAlgorithm==0)
-            {
-                gridObj->clearPath();
-                visualizeBfs(gridObj,window,config);
-            }
-            else if(config->selectedAlgorithm==1)
-            {
-                gridObj->clearPath();
-                visualizeDfs(gridObj,window,config);
-
-            }
-            else if(config->selectedAlgorithm==2)
-            {
-                visualizeHamiltonian(gridObj,window,config);
-            }
-            else if(config->selectedAlgorithm==3)
-            {
-                visualizeSpiral(gridObj,window,config,false);
-            }
-            else if(config->selectedAlgorithm==4)
-            {
-                visualizeSpiral(gridObj,window,config,true);
-            }
-            isAlgorithmStarted = false;
-            config->isStartClicked = false;
+            visualizePattern(gridObj,window,config);
+            config->isPatternStarted = false;
+            isAlgorithmStarted=false;
         }
-        if(!config->isStartClicked&&!isMouseOverImGuiWindow(window,config))
+        if(config->isPathfindingStarted&&!isAlgorithmStarted)
+        {
+            isAlgorithmStarted= true;
+            visualizePathfinding(gridObj,window,config);
+
+            isAlgorithmStarted = false;
+            config->isPathfindingStarted = false;
+        }
+        if(!(config->isPathfindingStarted||config->isPatternStarted)&&!isMouseOverImGuiWindow(window,config))
         {
             handleMouseEvents(gridObj,window,&event);
         }
