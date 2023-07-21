@@ -1,8 +1,10 @@
 #include "visualizePathfinding.h"
 #include <iostream>
 
-bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
+bool dfs(Vector2 currentTilePos,Grid *gridObj,std::vector<Vector2>*path,bool **visited)
 {
+    visited[currentTilePos.row][currentTilePos.col]=true;
+    path->push_back(currentTilePos);
     int dirX[]= {1,0,-1,0};
     int dirY[]= {0,-1,0,1};
 
@@ -24,15 +26,11 @@ bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window,CONFIG *c
         }
 
 
-        if(newTile->state==TileState::notVisited)
+        if(!visited[new_row][new_col]&&newTile->state!=TileState::wall)
         {
-            newTile->state = TileState::visited;
             newTile->parentTile = &gridObj->grid[currentTilePos.row][currentTilePos.col];
 
-            std::this_thread::sleep_for(std::chrono::milliseconds(101-config->visualizationSpeed));
-            renderGrid(gridObj,window);
-
-            if (dfs(Vector2(new_col,new_row),gridObj, window,config)) {
+            if (dfs(Vector2(new_col,new_row),gridObj,path,visited)) {
                     // Path was found!
                     return true;
             }
@@ -42,12 +40,14 @@ bool dfs(Vector2 currentTilePos,Grid *gridObj,sf::RenderWindow *window,CONFIG *c
     return false;
 }
 
-void visualizeDfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
+bool dfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path)
 {
-    bool pathFound = dfs(gridObj->sourceCoords,gridObj,window,config);
-    if(pathFound)
+    bool **visited;
+    visited = new bool*[gridObj->gridSize];
+    for(int i=0;i<gridObj->gridSize;i++)
     {
-            Tile *destParent = gridObj->grid[gridObj->destCoords.row][gridObj->destCoords.col].parentTile;
-            drawPath(gridObj,window,destParent,config);
+        visited[i] = new bool[gridObj->gridSize]{false};
     }
+    bool pathFound= dfs(gridObj->sourceCoords,gridObj,path,visited);
+    return pathFound;
 }

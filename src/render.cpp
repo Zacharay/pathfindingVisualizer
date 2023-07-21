@@ -83,6 +83,7 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
         if(config->isPatternStarted&&!isAlgorithmStarted)
         {
             isAlgorithmStarted= true;
+            gridObj->clearPath();
             visualizePattern(gridObj,window,config);
             config->isPatternStarted = false;
             isAlgorithmStarted=false;
@@ -90,6 +91,7 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
         if(config->isPathfindingStarted&&!isAlgorithmStarted)
         {
             isAlgorithmStarted= true;
+            gridObj->clearPath();
             visualizePathfinding(gridObj,window,config);
 
             isAlgorithmStarted = false;

@@ -286,7 +286,7 @@
 	"../../Grid/Grid.h"
 	"../../config.h"
 
-1689944839 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/DFS.cpp
+1689960709 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/DFS.cpp
 	"visualizePathfinding.h"
 	<iostream>
 
@@ -301,7 +301,7 @@
 	<SFML/Graphics.hpp>
 	"../../config.h"
 
-1689945115 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
+1689960671 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
 	"visualizePathfinding.h"
 
 1689954417 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/hamiltonianCycle.cpp
@@ -326,12 +326,12 @@
 	"visualizePattern.h"
 	<vector>
 
-1689954840 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.cpp
+1689954971 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.cpp
 	"visualizePattern.h"
 	<vector>
 	<iostream>
 
-1689945220 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/BFS.cpp
+1689956129 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/BFS.cpp
 	"visualizePathfinding.h"
 	<iostream>
 
