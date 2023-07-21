@@ -1,16 +1,16 @@
 #include "visualizePattern.h"
 #include <vector>
 #include <iostream>
-void generateHamiltonian(Grid *gridObj,std::vector<Vector2> *walls);
+void generateKruskalMaze(Grid *gridObj,std::vector<Vector2> *walls);
 void generateSpiral(bool isInnerSpiral,Grid *gridObj,std::vector<Vector2>*walls);
 
 void visualizePattern(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
     std::vector<Vector2> walls;
 
-    if(config->selectedPattern==Patterns::HamiltonianCycle)
+    if(config->selectedPattern==Patterns::Kruskal)
     {
-        generateHamiltonian(gridObj,&walls);
+        generateKruskalMaze(gridObj,&walls);
     }
     else if(config->selectedPattern==Patterns::OuterSpiral)
     {
@@ -34,7 +34,7 @@ void visualizePattern(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
         if(i%config->substep==0)
         {
             renderGrid(gridObj,window);
-            std::this_thread::sleep_for(std::chrono::milliseconds(101-config->visualizationSpeed));
+            std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
         }
     }
     renderGrid(gridObj,window);

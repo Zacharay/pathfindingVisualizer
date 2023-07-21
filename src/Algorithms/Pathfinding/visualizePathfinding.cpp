@@ -28,7 +28,7 @@ void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
         if(i%config->substep==0)
         {
             renderGrid(gridObj,window);
-            std::this_thread::sleep_for(std::chrono::milliseconds(101-config->visualizationSpeed));
+            std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
         }
     }
 

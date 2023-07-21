@@ -17,7 +17,7 @@ void drawPath(Grid *gridObj,sf::RenderWindow *window,Tile *currentTile,CONFIG *c
     {
         path[i]->state = TileState::path;
         renderGrid(gridObj,window);
-        std::this_thread::sleep_for(std::chrono::milliseconds(std::max(5,101-config->visualizationSpeed)));
+        std::this_thread::sleep_for(std::chrono::milliseconds(std::max(5,11-config->visualizationSpeed)));
 
     }
 }

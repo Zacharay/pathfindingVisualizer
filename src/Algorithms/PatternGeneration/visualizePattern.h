@@ -10,7 +10,7 @@
 #include "../../config.h"
 
 enum Patterns{
-    HamiltonianCycle,
+    Kruskal,
     OuterSpiral,
     InnerSpiral
 };

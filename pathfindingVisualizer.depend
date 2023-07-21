@@ -18,7 +18,7 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689945493 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689972316 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 	"Algorithms/PatternGeneration/visualizePattern.h"
@@ -33,9 +33,9 @@
 	"config.h"
 	"GUI.h"
 
-1689525554 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.h
+1689975781 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.h
 
-1689525563 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.cpp
+1689975759 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Vector2.cpp
 	"Vector2.h"
 
 1689866195 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/BFS.cpp
@@ -217,7 +217,7 @@
 	<stdint.h>
 	"imstb_textedit.h"
 
-1689945411 source:/home/zachary/Projects/pathfindingVisualizer/src/GUI.cpp
+1689976351 source:/home/zachary/Projects/pathfindingVisualizer/src/GUI.cpp
 	"config.h"
 	<SFML/Graphics.hpp>
 	"libraries/imgui/imgui.h"
@@ -226,7 +226,7 @@
 	"render.h"
 	"iostream"
 
-1689945258 /home/zachary/Projects/pathfindingVisualizer/src/config.h
+1689976363 /home/zachary/Projects/pathfindingVisualizer/src/config.h
 
 1689850942 /home/zachary/Projects/pathfindingVisualizer/src/GUI.h
 	"config.h"
@@ -301,7 +301,7 @@
 	<SFML/Graphics.hpp>
 	"../../config.h"
 
-1689960671 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
+1689976388 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
 	"visualizePathfinding.h"
 
 1689954417 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/hamiltonianCycle.cpp
@@ -311,7 +311,7 @@
 	<iostream>
 	"algorithm"
 
-1689946101 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.h
+1689973437 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.h
 	"../../Grid/Grid.h"
 	"queue"
 	"../../Grid/Vector2.h"
@@ -326,7 +326,7 @@
 	"visualizePattern.h"
 	<vector>
 
-1689954971 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.cpp
+1689976380 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.cpp
 	"visualizePattern.h"
 	<vector>
 	<iostream>
@@ -343,4 +343,13 @@
 	"SFML/Graphics.hpp"
 	"../../config.h"
 	<vector>
+
+1689973418 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/prim.cpp
+
+1689976303 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/kruskal.cpp
+	"visualizePattern.h"
+	<vector>
+	<random>
+	<iostream>
+	"algorithm"
 

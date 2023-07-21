@@ -30,7 +30,7 @@ void renderImGuiWindow(CONFIG *config,Grid *gridObj,sf::RenderWindow *window)
         config->isResizeClicked = true;
     }
 
-    ImGui::SliderInt("Speed" , &config->visualizationSpeed,1,100);
+    ImGui::SliderInt("Speed" , &config->visualizationSpeed,1,10);
     ImGui::Combo("Patterns", &config->selectedPattern, config->patternList, IM_ARRAYSIZE(config->patternList));
     if (ImGui::Button("Generate Pattern"))
     {

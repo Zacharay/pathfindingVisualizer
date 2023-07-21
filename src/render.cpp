@@ -84,6 +84,7 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
         {
             isAlgorithmStarted= true;
             gridObj->clearPath();
+            gridObj->clearWalls();
             visualizePattern(gridObj,window,config);
             config->isPatternStarted = false;
             isAlgorithmStarted=false;
