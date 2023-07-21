@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1689888603 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.cpp
+1689889473 source:/home/zachary/Projects/pathfindingVisualizer/src/Grid/Grid.cpp
 	"Grid.h"
 	<iostream>
 
@@ -18,7 +18,7 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689887561 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1689941806 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 	"Algorithms/algorithms.h"
@@ -225,7 +225,7 @@
 	"render.h"
 	"iostream"
 
-1689887254 /home/zachary/Projects/pathfindingVisualizer/src/config.h
+1689941840 /home/zachary/Projects/pathfindingVisualizer/src/config.h
 
 1689850942 /home/zachary/Projects/pathfindingVisualizer/src/GUI.h
 	"config.h"
@@ -236,7 +236,7 @@
 	"algorithms.h"
 	<iostream>
 
-1689865584 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/algorithms.h
+1689941776 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/algorithms.h
 	"../Grid/Grid.h"
 	"queue"
 	"../Grid/Vector2.h"
@@ -264,4 +264,8 @@
 	"../render.h"
 	<thread>
 	<chrono>
+
+1689942173 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/spiral.cpp
+	"algorithms.h"
+	<vector>
 

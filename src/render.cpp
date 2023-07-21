@@ -85,6 +85,14 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
             {
                 visualizeHamiltonian(gridObj,window,config);
             }
+            else if(config->selectedAlgorithm==3)
+            {
+                visualizeSpiral(gridObj,window,config,false);
+            }
+            else if(config->selectedAlgorithm==4)
+            {
+                visualizeSpiral(gridObj,window,config,true);
+            }
             isAlgorithmStarted = false;
             config->isStartClicked = false;
         }

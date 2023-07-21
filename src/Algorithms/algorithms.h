@@ -13,3 +13,4 @@
 void visualizeBfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config);
 void visualizeDfs(Grid *gridObj,sf::RenderWindow *window,CONFIG *config);
 void visualizeHamiltonian(Grid *gridObj,sf::RenderWindow *window,CONFIG *config);
+void visualizeSpiral(Grid *gridObj,sf::RenderWindow *window,CONFIG *config,bool innerSpiral);

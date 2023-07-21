@@ -7,7 +7,7 @@ struct CONFIG{
 
     int gridSize = 45;
     int visualizationSpeed = 100;//max 100 min 1
-    const char* algorithmsList[3]= {"Breadth First Search","Depth First Search","Hamiltonian Cycle"};
+    const char* algorithmsList[5]= {"Breadth First Search","Depth First Search","Hamiltonian Cycle","Outer Spiral","Inner Spiral"};
     int selectedAlgorithm=0;
 
     //buttons

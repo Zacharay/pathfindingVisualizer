@@ -51,8 +51,12 @@
 		<Unit filename="src/Algorithms/BFS.cpp" />
 		<Unit filename="src/Algorithms/DFS.cpp" />
 		<Unit filename="src/Algorithms/algorithms.h" />
+		<Unit filename="src/Algorithms/drawFrame.cpp" />
+		<Unit filename="src/Algorithms/drawFrame.h" />
 		<Unit filename="src/Algorithms/drawPath.cpp" />
 		<Unit filename="src/Algorithms/drawPath.h" />
+		<Unit filename="src/Algorithms/hamiltonianCycle.cpp" />
+		<Unit filename="src/Algorithms/spiral.cpp" />
 		<Unit filename="src/GUI.cpp" />
 		<Unit filename="src/GUI.h" />
 		<Unit filename="src/Grid/Grid.cpp" />
