@@ -1,14 +1,10 @@
 #include "visualizePathfinding.h"
-#include <iostream>
-bool bfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path){
+
+void bfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound){
 
     std::queue<Vector2> q;
-    bool **visited;
-    visited = new bool*[gridObj->gridSize];
-    for(int i=0;i<gridObj->gridSize;i++)
-    {
-        visited[i] = new bool[gridObj->gridSize]{0};
-    }
+    std::vector<std::vector<bool>>visited(gridObj->gridSize,std::vector<bool>(gridObj->gridSize,0));
+
 
     q.push(gridObj->sourceCoords);
     visited[gridObj->sourceCoords.row][gridObj->sourceCoords.col]=1;
@@ -37,7 +33,8 @@ bool bfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path){
             if(newTile->state==TileState::destination)
             {
                 newTile->parentTile = &gridObj->grid[parent_row][parent_col];
-                return true;
+                pathFound =true;
+                return;
             }
 
 
@@ -50,6 +47,6 @@ bool bfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path){
             }
         }
     }
-    return false;
+
 }
 

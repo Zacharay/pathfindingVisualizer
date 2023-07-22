@@ -76,6 +76,7 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
         }
         if(config->isClearWallsClicked)
         {
+            gridObj->clearPath();
             gridObj->clearWalls();
             renderGrid(gridObj,window);
             config->isClearWallsClicked = false;

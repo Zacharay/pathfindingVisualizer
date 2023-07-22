@@ -1,7 +1,7 @@
 #include "visualizePathfinding.h"
 
-bool bfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path);
-bool dfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path);
+void bfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound);
+void dfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound);
 void astarAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound);
 
 void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
@@ -10,11 +10,11 @@ void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
     bool pathFound = false;
     if(config->selectedAlgorithm==Algorithms::BFS)
     {
-        pathFound = bfsAlgorithm(gridObj,&path);
+        bfsAlgorithm(gridObj,&path,pathFound);
     }
     else if(config->selectedAlgorithm==Algorithms::DFS)
     {
-        pathFound = dfsAlgorithm(gridObj,&path);
+        dfsAlgorithm(gridObj,&path,pathFound);
     }
     else if(config->selectedAlgorithm==Algorithms::aStar)
     {

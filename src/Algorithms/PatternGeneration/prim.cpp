@@ -85,8 +85,6 @@ void applyPrimAlgorithm(Grid *gridObj,std::vector<Vector2>*walls)
     int startingTileRow = dis(gen);
     while(startingTileRow%2!=0)startingTileRow=dis(gen);
 
-    std::cout<<startingTileCol<<" "<<startingTileRow<<std::endl;
-
     Vector2 startingTileCoords(startingTileCol,startingTileRow);
 
     std::priority_queue<EdgePrim,std::vector<EdgePrim>,CompareEdges> edgesPQ;
