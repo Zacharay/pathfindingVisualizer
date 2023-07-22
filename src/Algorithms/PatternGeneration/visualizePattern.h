@@ -10,9 +10,10 @@
 #include "../../config.h"
 
 enum Patterns{
-    Kruskal,
+    KruskalMaze,
+    PrimMaze,
     OuterSpiral,
-    InnerSpiral
+    InnerSpiral,
 };
 
 void visualizePattern(Grid *gridObj,sf::RenderWindow *window,CONFIG *config);

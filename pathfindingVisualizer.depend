@@ -226,7 +226,7 @@
 	"render.h"
 	"iostream"
 
-1689976363 /home/zachary/Projects/pathfindingVisualizer/src/config.h
+1690023357 /home/zachary/Projects/pathfindingVisualizer/src/config.h
 
 1689850942 /home/zachary/Projects/pathfindingVisualizer/src/GUI.h
 	"config.h"
@@ -274,7 +274,7 @@
 	"SFML/Graphics.hpp"
 	"../../config.h"
 
-1689944968 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/drawPath.cpp
+1689976590 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/drawPath.cpp
 	"drawPath.h"
 	"../../render.h"
 	<thread>
@@ -311,7 +311,7 @@
 	<iostream>
 	"algorithm"
 
-1689973437 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.h
+1690023478 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.h
 	"../../Grid/Grid.h"
 	"queue"
 	"../../Grid/Vector2.h"
@@ -326,7 +326,7 @@
 	"visualizePattern.h"
 	<vector>
 
-1689976380 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.cpp
+1690023555 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/visualizePattern.cpp
 	"visualizePattern.h"
 	<vector>
 	<iostream>
@@ -344,12 +344,26 @@
 	"../../config.h"
 	<vector>
 
-1689973418 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/prim.cpp
-
-1689976303 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/kruskal.cpp
+1690026494 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/prim.cpp
 	"visualizePattern.h"
 	<vector>
 	<random>
 	<iostream>
 	"algorithm"
+	<queue>
+	"../Others/DSU.h"
+
+1690025633 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/kruskal.cpp
+	"visualizePattern.h"
+	<vector>
+	<random>
+	<iostream>
+	"algorithm"
+	"../Others/DSU.h"
+
+1690025628 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/DSU.cpp
+	"DSU.h"
+
+1690025619 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/DSU.h
+	"../../Grid/Vector2.h"
 

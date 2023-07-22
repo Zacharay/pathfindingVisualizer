@@ -10,7 +10,7 @@ struct CONFIG{
     int visualizationSpeed = 10;//max 10 min 1
     const char* algorithmsList[2]= {"Breadth First Search","Depth First Search"};
     int selectedAlgorithm=0;
-    const char* patternList[3]= {"Kruskal Maze","Outer Spiral","Inner Spiral"};
+    const char* patternList[4]= {"Kruskal Maze","Prim Maze","Outer Spiral","Inner Spiral"};
     int selectedPattern=0;
 
 

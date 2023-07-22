@@ -57,7 +57,8 @@
 		<Unit filename="src/Algorithms/Pathfinding/DFS.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/visualizePathfinding.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/visualizePathfinding.h" />
-		<Unit filename="src/Algorithms/PatternGeneration/hamiltonianCycle.cpp" />
+		<Unit filename="src/Algorithms/PatternGeneration/kruskal.cpp" />
+		<Unit filename="src/Algorithms/PatternGeneration/prim.cpp" />
 		<Unit filename="src/Algorithms/PatternGeneration/spiral.cpp" />
 		<Unit filename="src/Algorithms/PatternGeneration/visualizePattern.cpp" />
 		<Unit filename="src/Algorithms/PatternGeneration/visualizePattern.h" />

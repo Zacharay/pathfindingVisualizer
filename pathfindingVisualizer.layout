@@ -2,22 +2,12 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="src/libraries/imgui/imgui-SFML.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/Algorithms/Pathfinding/DFS.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="123" />
+			<Cursor1 position="239" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/Algorithms/Others/generateFrame.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="115" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/render.cpp" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2570" topLine="78" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/Others/drawPath.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/Grid/Vector2.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="12" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="84" topLine="0" />
 		</Cursor>
@@ -27,84 +17,14 @@
 			<Cursor1 position="138" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/GUI.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="src/libraries/imgui/imgui-SFML.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1625" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="src/Grid/Grid.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="84" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/config.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="579" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/Others/drawPath.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="35" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/PatternGeneration/hamiltonianCycle.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="875" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/Pathfinding/BFS.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1336" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Grid/Vector2.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="20" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="79" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/PatternGeneration/visualizePattern.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="189" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/libraries/imgui/imgui.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="14602" topLine="188" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/Others/generateFrame.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="88" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/PatternGeneration/visualizePattern.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="919" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="src/mouseEventHandler.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="898" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/Pathfinding/DFS.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="239" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/Pathfinding/visualizePathfinding.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="358" topLine="0" />
+			<Cursor1 position="0" topLine="123" />
 		</Cursor>
 	</File>
 	<File name="src/Algorithms/Pathfinding/visualizePathfinding.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="99" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Algorithms/PatternGeneration/spiral.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1250" topLine="28" />
+			<Cursor1 position="1008" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src/main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="20" zoom_2="0">
@@ -112,14 +32,24 @@
 			<Cursor1 position="33" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/GUI.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="9" zoom_2="0">
+	<File name="src/Algorithms/Others/drawFrame.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="216" topLine="0" />
+			<Cursor1 position="167" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/Grid/Vector2.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="12" zoom_2="0">
+	<File name="src/Algorithms/Others/drawPath.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="55" topLine="0" />
+			<Cursor1 position="84" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Grid/Vector2.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="20" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="21" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/render.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2605" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src/mouseEventHandler.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="20" zoom_2="0">
@@ -127,9 +57,9 @@
 			<Cursor1 position="139" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/Grid/Tile.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="20" zoom_2="0">
+	<File name="src/libraries/imgui/imgui.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="67" topLine="0" />
+			<Cursor1 position="14602" topLine="188" />
 		</Cursor>
 	</File>
 	<File name="src/Grid/Tile.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -137,14 +67,84 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="src/config.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="258" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Algorithms/Others/drawPath.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="562" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="src/Grid/Grid.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="20" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="325" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/Algorithms/Others/drawFrame.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+	<File name="src/mouseEventHandler.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="167" topLine="0" />
+			<Cursor1 position="898" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="src/Algorithms/Pathfinding/visualizePathfinding.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="358" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Algorithms/PatternGeneration/kruskal.cpp" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3333" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Grid/Grid.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="84" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Grid/Tile.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="20" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="67" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Algorithms/PatternGeneration/visualizePattern.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1158" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src/Algorithms/Pathfinding/BFS.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1336" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Algorithms/Others/generateFrame.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="115" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/GUI.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1122" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="src/GUI.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="9" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="216" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Algorithms/PatternGeneration/visualizePattern.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="260" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Algorithms/Others/generateFrame.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="88" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Algorithms/PatternGeneration/spiral.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="646" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

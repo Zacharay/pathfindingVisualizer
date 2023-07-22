@@ -3,6 +3,7 @@
 #include <random>
 #include <iostream>
 #include "algorithm"
+#include "../Others/DSU.h"
 
 struct Edge{
     Vector2 from;
@@ -12,25 +13,6 @@ struct Edge{
         : from(from), middle(middle), to(to) {}
 };
 
-//Disjoint Union Set for cycle detection
-int findDSU(int a,int *rep)
-{
-    if(rep[a]==a)return a;
-    else return rep[a]=findDSU(rep[a],rep);
-}
-void unionDSU(int a,int b, int *rep)
-{
-    int repA = findDSU(a,rep);
-    int repB = findDSU(b,rep);
-    if(repA!=repB)
-    {
-        rep[repA]=repB;
-    }
-}
-int convertCoordsToIndex(Vector2 coords,int nodesPerRow)
-{
-    return coords.col + coords.row*nodesPerRow;
-}
 std::vector<Vector2> generateInitialTiles(Grid *gridObj)
 {
     std::vector<Vector2>initialTiles;

@@ -2,15 +2,20 @@
 #include <vector>
 #include <iostream>
 void generateKruskalMaze(Grid *gridObj,std::vector<Vector2> *walls);
+void generatePrimMaze(Grid *gridObj,std::vector<Vector2> *walls);
 void generateSpiral(bool isInnerSpiral,Grid *gridObj,std::vector<Vector2>*walls);
 
 void visualizePattern(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
     std::vector<Vector2> walls;
 
-    if(config->selectedPattern==Patterns::Kruskal)
+    if(config->selectedPattern==Patterns::KruskalMaze)
     {
         generateKruskalMaze(gridObj,&walls);
+    }
+    else if(config->selectedPattern==Patterns::PrimMaze)
+    {
+        generatePrimMaze(gridObj,&walls);
     }
     else if(config->selectedPattern==Patterns::OuterSpiral)
     {
