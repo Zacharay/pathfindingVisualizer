@@ -10,6 +10,7 @@
 #include "../../config.h"
 enum Algorithms{
     BFS,
-    DFS
+    DFS,
+    aStar
 };
 void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config);

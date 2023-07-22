@@ -2,6 +2,7 @@
 
 bool bfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path);
 bool dfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path);
+void astarAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound);
 
 void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
@@ -14,6 +15,10 @@ void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
     else if(config->selectedAlgorithm==Algorithms::DFS)
     {
         pathFound = dfsAlgorithm(gridObj,&path);
+    }
+    else if(config->selectedAlgorithm==Algorithms::aStar)
+    {
+        astarAlgorithm(gridObj,&path,pathFound);
     }
     for(int i=0;i<path.size();i++)
     {

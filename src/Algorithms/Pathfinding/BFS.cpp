@@ -29,7 +29,7 @@ bool bfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path){
             int new_col = parent_col+dirX[i];
             int new_row = parent_row+dirY[i];
 
-            bool isTileOnBoard = new_col>=0&&new_col<gridObj->gridSize&&new_row>=0&&new_row<gridObj->gridSize;;
+            bool isTileOnBoard = new_col>=0&&new_col<gridObj->gridSize&&new_row>=0&&new_row<gridObj->gridSize;
             if(!isTileOnBoard)continue;
 
             Tile *newTile = &gridObj->grid[new_row][new_col];

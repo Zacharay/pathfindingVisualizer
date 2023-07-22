@@ -226,7 +226,7 @@
 	"render.h"
 	"iostream"
 
-1690023357 /home/zachary/Projects/pathfindingVisualizer/src/config.h
+1690033653 /home/zachary/Projects/pathfindingVisualizer/src/config.h
 
 1689850942 /home/zachary/Projects/pathfindingVisualizer/src/GUI.h
 	"config.h"
@@ -290,7 +290,7 @@
 	"visualizePathfinding.h"
 	<iostream>
 
-1689945150 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.h
+1690033667 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.h
 	"../../Grid/Grid.h"
 	"queue"
 	"../../Grid/Vector2.h"
@@ -301,7 +301,7 @@
 	<SFML/Graphics.hpp>
 	"../../config.h"
 
-1689976388 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
+1690041388 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
 	"visualizePathfinding.h"
 
 1689954417 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/hamiltonianCycle.cpp
@@ -331,7 +331,7 @@
 	<vector>
 	<iostream>
 
-1689956129 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/BFS.cpp
+1690050919 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/BFS.cpp
 	"visualizePathfinding.h"
 	<iostream>
 
@@ -344,7 +344,7 @@
 	"../../config.h"
 	<vector>
 
-1690026494 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/prim.cpp
+1690026562 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/prim.cpp
 	"visualizePattern.h"
 	<vector>
 	<random>
@@ -365,5 +365,19 @@
 	"DSU.h"
 
 1690025619 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/DSU.h
+	"../../Grid/Vector2.h"
+
+1690052212 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/aStar.cpp
+	"visualizePathfinding.h"
+	"../Others/calculateDistance.h"
+	<iostream>
+	<queue>
+	<math.h>
+
+1690040767 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/calculateDistance.cpp
+	"calculateDistance.h"
+	"math.h"
+
+1690040675 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/calculateDistance.h
 	"../../Grid/Vector2.h"
 

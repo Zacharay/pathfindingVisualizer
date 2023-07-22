@@ -48,13 +48,17 @@
 			<Add directory="src/libraries/imgui" />
 		</Linker>
 		<Unit filename="cb.bmp" />
-		<Unit filename="src/Algorithms/Others/drawFrame.h" />
+		<Unit filename="src/Algorithms/Others/DSU.cpp" />
+		<Unit filename="src/Algorithms/Others/DSU.h" />
+		<Unit filename="src/Algorithms/Others/calculateDistance.cpp" />
+		<Unit filename="src/Algorithms/Others/calculateDistance.h" />
 		<Unit filename="src/Algorithms/Others/drawPath.cpp" />
 		<Unit filename="src/Algorithms/Others/drawPath.h" />
 		<Unit filename="src/Algorithms/Others/generateFrame.cpp" />
 		<Unit filename="src/Algorithms/Others/generateFrame.h" />
 		<Unit filename="src/Algorithms/Pathfinding/BFS.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/DFS.cpp" />
+		<Unit filename="src/Algorithms/Pathfinding/aStar.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/visualizePathfinding.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/visualizePathfinding.h" />
 		<Unit filename="src/Algorithms/PatternGeneration/kruskal.cpp" />
