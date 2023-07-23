@@ -15,12 +15,13 @@
 static sf::Color tileColors[6];
 void initializeTileColors()
 {
-    tileColors[TileState::notVisited] = sf::Color::White;
-    tileColors[TileState::visited] = sf::Color::Cyan;
+    tileColors[TileState::notVisited] = sf::Color(240, 240, 240);
+    tileColors[TileState::visited] = sf::Color(135, 206, 250);
+    tileColors[TileState::inQueue] = sf::Color(255, 165, 0);
     tileColors[TileState::path] = sf::Color::Yellow;
-    tileColors[TileState::wall] =sf::Color::Black;
-    tileColors[TileState::source]= sf::Color::Green;
-    tileColors[TileState::destination]= sf::Color::Red;
+    tileColors[TileState::wall] =sf::Color(0, 11, 33);
+    tileColors[TileState::source]= sf::Color(41, 255, 87);
+    tileColors[TileState::destination]= sf::Color(220,20,60);
 
 }
 
@@ -31,7 +32,7 @@ void renderGrid(Grid *gridObj,sf::RenderWindow *window)
     sf::RectangleShape tile;
     tile.setSize(sf::Vector2f(gridObj->tileSize, gridObj->tileSize));
     tile.setOutlineThickness(1.0f);
-    tile.setOutlineColor(sf::Color::Black);
+    tile.setOutlineColor(sf::Color(0, 11, 33));
 
     for(int row=0;row<gridObj->gridSize;row++)
     {

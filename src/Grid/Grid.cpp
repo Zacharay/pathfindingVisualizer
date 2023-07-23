@@ -9,6 +9,10 @@ Grid::Grid(int windowSize)
         grid[i] = new Tile[gridSize];
     }
 
+    for(int row=0;row<gridSize;row++)
+        for(int col = 0 ;col<gridSize;col++)
+            grid[row][col] = Tile(row,col);
+
     tileSize = windowSize/gridSize;
     grid[sourceCoords.row][sourceCoords.col].state = source;
     grid[destCoords.row][destCoords.col].state = destination;
@@ -44,6 +48,10 @@ void Grid::resizeGrid(int newGridSize,int windowSize)
     for (int i = 0; i < newGridSize; ++i) {
       newGrid[i] = new Tile[newGridSize];
     }
+
+    for(int row=0;row<newGridSize;row++)
+        for(int col = 0 ;col<newGridSize;col++)
+            newGrid[row][col] = Tile(row,col);
 
     int copySize = (newGridSize<gridSize)?newGridSize:gridSize;
 
