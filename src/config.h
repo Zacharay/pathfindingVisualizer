@@ -8,7 +8,7 @@ struct CONFIG{
     int gridSize = 45;
     int substep = 2;
     int visualizationSpeed = 10;//max 10 min 1
-    const char* algorithmsList[3]= {"Breadth First Search","Depth First Search","A*"};
+    const char* algorithmsList[4]= {"Breadth First Search","Depth First Search","A*","Greedy Best First Search"};
     int selectedAlgorithm=0;
     const char* patternList[4]= {"Kruskal Maze","Prim Maze","Outer Spiral","Inner Spiral"};
     int selectedPattern=0;

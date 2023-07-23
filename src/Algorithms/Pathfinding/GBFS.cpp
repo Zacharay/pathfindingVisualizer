@@ -1,16 +1,17 @@
 #include "visualizePathfinding.h"
-#include <queue>
 #include "../Others/costNode.h"
-
-
-struct CompareNodesFCost {
+#include <vector>
+#include <queue>
+#include <iostream>
+struct CompareNodesHCost {
     bool operator()(const costNode *nodeA, const costNode *nodeB) const {
-        return nodeA->fCost > nodeB->fCost;
+        return nodeA->hCost > nodeB->hCost;
     }
 };
 
-void astarAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound)
+void greedyBfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound)
 {
+
     std::vector<std::vector<costNode>>nodes(gridObj->gridSize,std::vector<costNode>(gridObj->gridSize,costNode(0,0)));
 
 
@@ -22,12 +23,8 @@ void astarAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound)
             nodes[row][col].calculateDistanceToDest(gridObj->destCoords);
         }
     }
-
-    std::priority_queue<costNode*,std::vector<costNode*>,CompareNodesFCost>nodesPQ;
-
+    std::priority_queue<costNode*,std::vector<costNode*>,CompareNodesHCost>nodesPQ;
     costNode *srcNode = &nodes[gridObj->sourceCoords.row][gridObj->sourceCoords.col];
-    srcNode->fCost = srcNode->hCost;
-    srcNode->gCost = 0;
     nodesPQ.push(srcNode);
 
     int dirX[] = {0,0,1,-1};
@@ -36,8 +33,7 @@ void astarAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound)
     {
         costNode *currentNode = nodesPQ.top();
         nodesPQ.pop();
-        currentNode->nodeStatus = NodeStatus::nodeVisited;
-        path->push_back(currentNode->pos);
+
 
         for(int i=0;i<4;i++)
         {
@@ -58,22 +54,13 @@ void astarAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound)
 
             if(neighborNode->nodeStatus!=NodeStatus::nodeVisited)
             {
-
-                int tentativeG = currentNode->gCost +1;
-                if(tentativeG < neighborNode->gCost)
-                {
-                     neighborNode->gCost = tentativeG;
-                     neighborNode->fCost =neighborNode->gCost  + neighborNode->hCost;
-                     gridObj->grid[neighborNode->pos.row][neighborNode->pos.col].parentTile = &gridObj->grid[currentNode->pos.row][currentNode->pos.col];
-                     if(neighborNode->nodeStatus!= NodeStatus::inQueue)
-                     {
-                        neighborNode->nodeStatus = NodeStatus::inQueue;
-                        nodesPQ.push(neighborNode);
-                     }
-                }
+                path->push_back(neighborNode->pos);
+                neighborNode->nodeStatus = NodeStatus::nodeVisited;
+                gridObj->grid[neighborNode->pos.row][neighborNode->pos.col].parentTile = &gridObj->grid[currentNode->pos.row][currentNode->pos.col];
+                nodesPQ.push(neighborNode);
             }
 
         }
-
     }
+
 }

@@ -11,6 +11,7 @@
 enum Algorithms{
     BFS,
     DFS,
-    aStar
+    aStar,
+    GBFS
 };
 void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config);

@@ -18,7 +18,7 @@
 	"SFML/Graphics.hpp"
 	"Grid/Grid.h"
 
-1689972316 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
+1690056240 source:/home/zachary/Projects/pathfindingVisualizer/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Grid/Grid.h"
 	"Algorithms/PatternGeneration/visualizePattern.h"
@@ -226,7 +226,7 @@
 	"render.h"
 	"iostream"
 
-1690033653 /home/zachary/Projects/pathfindingVisualizer/src/config.h
+1690137768 /home/zachary/Projects/pathfindingVisualizer/src/config.h
 
 1689850942 /home/zachary/Projects/pathfindingVisualizer/src/GUI.h
 	"config.h"
@@ -286,11 +286,11 @@
 	"../../Grid/Grid.h"
 	"../../config.h"
 
-1690056200 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/DFS.cpp
+1690056418 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/DFS.cpp
 	"visualizePathfinding.h"
 	<iostream>
 
-1690033667 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.h
+1690137735 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.h
 	"../../Grid/Grid.h"
 	"queue"
 	"../../Grid/Vector2.h"
@@ -301,7 +301,7 @@
 	<SFML/Graphics.hpp>
 	"../../config.h"
 
-1690056094 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
+1690138597 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
 	"visualizePathfinding.h"
 
 1689954417 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/PatternGeneration/hamiltonianCycle.cpp
@@ -366,7 +366,7 @@
 1690025619 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/DSU.h
 	"../../Grid/Vector2.h"
 
-1690055087 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/aStar.cpp
+1690137924 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/aStar.cpp
 	"visualizePathfinding.h"
 	<queue>
 	"../Others/costNode.h"
@@ -380,7 +380,14 @@
 
 1690054151 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/costNode.cpp
 
-1690055037 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/costNode.h
+1690056410 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/costNode.h
 	"../../Grid/Vector2.h"
 	<math.h>
+
+1690139161 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/GBFS.cpp
+	"visualizePathfinding.h"
+	"../Others/costNode.h"
+	<vector>
+	<queue>
+	<iostream>
 

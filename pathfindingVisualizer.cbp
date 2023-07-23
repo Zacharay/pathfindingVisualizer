@@ -50,8 +50,7 @@
 		<Unit filename="cb.bmp" />
 		<Unit filename="src/Algorithms/Others/DSU.cpp" />
 		<Unit filename="src/Algorithms/Others/DSU.h" />
-		<Unit filename="src/Algorithms/Others/calculateDistance.cpp" />
-		<Unit filename="src/Algorithms/Others/calculateDistance.h" />
+		<Unit filename="src/Algorithms/Others/costNode.h" />
 		<Unit filename="src/Algorithms/Others/drawPath.cpp" />
 		<Unit filename="src/Algorithms/Others/drawPath.h" />
 		<Unit filename="src/Algorithms/Others/generateFrame.cpp" />

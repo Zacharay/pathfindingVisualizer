@@ -30,7 +30,7 @@ bool dfs(Vector2 currentTilePos,Grid *gridObj,std::vector<Vector2>*path,std::vec
         {
             newTile->parentTile = &gridObj->grid[currentTilePos.row][currentTilePos.col];
 
-            if (dfs(Vector2(new_col,new_row),gridObj,path,visited)) {!
+            if (dfs(Vector2(new_col,new_row),gridObj,path,visited)) {
                     return true;
             }
 

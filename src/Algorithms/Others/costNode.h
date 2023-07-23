@@ -14,7 +14,7 @@ struct costNode{
     int hCost;
     int nodeStatus;
     costNode(int row,int col):
-    pos(col,row),fCost(0),gCost(1000),hCost(0),nodeStatus(0){}
+    pos(col,row),fCost(0),gCost(1000),hCost(0),nodeStatus(NodeStatus::nodeNotVisited){}
     void calculateDistanceToDest(Vector2 destCoords)
     {
         int dist = std::abs(pos.col-destCoords.col)+std::abs(pos.row-destCoords.row);

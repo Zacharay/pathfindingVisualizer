@@ -3,6 +3,7 @@
 void bfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound);
 void dfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound);
 void astarAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound);
+void greedyBfsAlgorithm(Grid *gridObj,std::vector<Vector2>*path,bool &pathFound);
 
 void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
@@ -19,6 +20,10 @@ void visualizePathfinding(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
     else if(config->selectedAlgorithm==Algorithms::aStar)
     {
         astarAlgorithm(gridObj,&path,pathFound);
+    }
+    else if(config->selectedAlgorithm==Algorithms::GBFS)
+    {
+        greedyBfsAlgorithm(gridObj,&path,pathFound);
     }
     for(int i=0;i<path.size();i++)
     {
