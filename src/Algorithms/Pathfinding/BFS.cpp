@@ -14,7 +14,12 @@ void bfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
         Tile* currentTile = tilesQ.front();
         tilesQ.pop();
 
-        if(currentTile->state!=TileState::source)currentTile->state = TileState::visited;
+        if(currentTile->state!=TileState::source)
+        {
+            currentTile->state = TileState::visited;
+            updateTile(*currentTile,*gridObj);
+        }
+
 
         std::vector<Tile*>neighbors;
         getNeighbors(*currentTile,neighbors,*gridObj);
@@ -31,11 +36,11 @@ void bfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
             if(neighborTile->state==TileState::notVisited)
             {
                 neighborTile->state=TileState::inQueue;
+                updateTile(*neighborTile,*gridObj);
                 neighborTile->parentTile = currentTile;
                 tilesQ.push(neighborTile);
             }
         }
-
         renderGrid(gridObj,window);
         std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
 

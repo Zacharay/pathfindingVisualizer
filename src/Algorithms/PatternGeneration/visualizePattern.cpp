@@ -26,7 +26,7 @@ void visualizePattern(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
         generateSpiral(true,gridObj,&walls);
     }
 
-    for(int i=0;i<walls.size();i++)
+   for(int i=0;i<walls.size();i++)
     {
         Vector2 coords = walls[i];
         if( gridObj->grid[coords.row][coords.col].state!=TileState::destination&&

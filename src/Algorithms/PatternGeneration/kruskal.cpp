@@ -30,7 +30,7 @@ void generateAllEdges(Grid *gridObj,std::vector<Edge>*edges)
     int nodesPerRow = gridObj->gridSize-2;
     int dirX[] = {0,0,2,-2};
     int dirY[] = {2,-2,0,0};
-    for(int i=0;i<initialTiles.size();i++)
+    for(size_t i=0;i<initialTiles.size();i++)
     {
         Vector2 from = initialTiles[i];
         for(int j=0;j<4;j++)

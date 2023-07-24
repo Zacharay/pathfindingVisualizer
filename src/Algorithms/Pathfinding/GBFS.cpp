@@ -21,8 +21,6 @@ void greedyBfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
     Tile *srcTile = &gridObj->grid[gridObj->sourceCoords.row][gridObj->sourceCoords.col];
     tilesPQ.push(srcTile);
 
-    int dirX[] = {0,0,1,-1};
-    int dirY[] = {1,-1,0,0};
     while(!tilesPQ.empty())
     {
         Tile *currentTile = tilesPQ.top();

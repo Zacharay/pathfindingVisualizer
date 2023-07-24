@@ -2,7 +2,7 @@
 #include "../../Grid/Grid.h"
 #include "queue"
 #include "../../Grid/Vector2.h"
-#include "../../render.h"
+#include "../../Render/tileRenderer.h"
 #include <chrono>
 #include <thread>
 #include "../Others/generateFrame.h"
