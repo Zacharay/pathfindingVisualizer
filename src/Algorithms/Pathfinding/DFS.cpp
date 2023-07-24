@@ -3,7 +3,10 @@
 
 bool dfs(Tile *currentTile,Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
-    if(currentTile->state!=TileState::source)currentTile->state = TileState::visited;
+    if(currentTile->state!=TileState::source)
+    {
+        currentTile->setState(TileState::visited);
+    }
     renderGrid(gridObj,window);
     std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
 

@@ -22,20 +22,8 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
         }
         if(config->isResizeClicked)
         {
-            gridObj->resizeGrid(config->gridSize,config->WINDOW_WIDTH);
+            gridObj->resizeGrid(config->gridSize,config->WINDOW_WIDTH,*config);
             renderGrid(gridObj,window);
-            switch(gridObj->gridSize)
-            {
-                case 25:
-                    config->substep= 1;
-                    break;
-                case 45:
-                    config->substep=2;
-                    break;
-                case 75:
-                    config->substep=3;
-                    break;
-            }
             config->isResizeClicked = false;
         }
         if(config->isClearWallsClicked)

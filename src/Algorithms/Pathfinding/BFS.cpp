@@ -16,8 +16,7 @@ void bfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
 
         if(currentTile->state!=TileState::source)
         {
-            currentTile->state = TileState::visited;
-            updateTile(*currentTile,*gridObj);
+            currentTile->setState(TileState::visited);
         }
 
 
@@ -35,8 +34,7 @@ void bfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
 
             if(neighborTile->state==TileState::notVisited)
             {
-                neighborTile->state=TileState::inQueue;
-                updateTile(*neighborTile,*gridObj);
+                neighborTile->setState(TileState::inQueue);
                 neighborTile->parentTile = currentTile;
                 tilesQ.push(neighborTile);
             }

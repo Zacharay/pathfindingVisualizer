@@ -6,4 +6,5 @@
 void initializeTileColors();
 void initializeGridTexture(const CONFIG& config,const Grid &gridObj);
 void renderGrid(Grid *gridObj,sf::RenderWindow *window);
-void updateTile(const Tile &tile,const Grid &gridObj);
+void updateTile(const Tile &tile);
+void clearGridTexture();

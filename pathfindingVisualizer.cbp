@@ -50,11 +50,12 @@
 		<Unit filename="cb.bmp" />
 		<Unit filename="src/Algorithms/Others/DSU.cpp" />
 		<Unit filename="src/Algorithms/Others/DSU.h" />
-		<Unit filename="src/Algorithms/Others/costNode.h" />
 		<Unit filename="src/Algorithms/Others/drawPath.cpp" />
 		<Unit filename="src/Algorithms/Others/drawPath.h" />
 		<Unit filename="src/Algorithms/Others/generateFrame.cpp" />
 		<Unit filename="src/Algorithms/Others/generateFrame.h" />
+		<Unit filename="src/Algorithms/Others/getNeighbors.cpp" />
+		<Unit filename="src/Algorithms/Others/getNeighbors.h" />
 		<Unit filename="src/Algorithms/Pathfinding/BFS.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/DFS.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/GBFS.cpp" />
@@ -74,6 +75,10 @@
 		<Unit filename="src/Grid/Tile.h" />
 		<Unit filename="src/Grid/Vector2.cpp" />
 		<Unit filename="src/Grid/Vector2.h" />
+		<Unit filename="src/Render/render.cpp" />
+		<Unit filename="src/Render/render.h" />
+		<Unit filename="src/Render/tileRenderer.cpp" />
+		<Unit filename="src/Render/tileRenderer.h" />
 		<Unit filename="src/config.h" />
 		<Unit filename="src/libraries/imgui/imconfig-SFML.h" />
 		<Unit filename="src/libraries/imgui/imconfig.h" />
@@ -93,8 +98,6 @@
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/mouseEventHandler.cpp" />
 		<Unit filename="src/mouseEventHandler.h" />
-		<Unit filename="src/render.cpp" />
-		<Unit filename="src/render.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

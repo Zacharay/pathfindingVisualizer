@@ -1,6 +1,6 @@
 #include "mouseEventHandler.h"
 #include "Grid/Vector2.h"
-#include "render.h"
+#include "Render/tileRenderer.h"
 #include "iostream"
 
 Vector2 getMousePosition(sf::RenderWindow *window,Grid *gridObj)
@@ -19,7 +19,7 @@ void drawWalls(sf::RenderWindow *window,Grid *gridObj)
 
                     if(gridObj->grid[mousePos.row][mousePos.col].state==TileState::notVisited)
                     {
-                        gridObj->grid[mousePos.row][mousePos.col].state =TileState::wall;
+                        gridObj->grid[mousePos.row][mousePos.col].setState(TileState::wall);
                     }
                     renderGrid(gridObj,window);
                 }
@@ -41,23 +41,23 @@ void moveTile(sf::RenderWindow *window,Grid *gridObj)
         if(movingTile->state==TileState::source)
         {
             Vector2 srcCoords = gridObj->sourceCoords;
-            gridObj->grid[srcCoords.row][srcCoords.col].state=TileState::notVisited;
+            gridObj->grid[srcCoords.row][srcCoords.col].setState(TileState::notVisited);
             gridObj->sourceCoords=mousePos;
             if(movingTile != &gridObj->grid[mousePos.row][mousePos.col])tilePosChanged = true;
 
             movingTile = &gridObj->grid[mousePos.row][mousePos.col];
-            movingTile->state= TileState::source;
+            movingTile->setState(TileState::source);
         }
         else
         {
             Vector2 destCoords = gridObj->destCoords;
-            gridObj->grid[destCoords.row][destCoords.col].state=TileState::notVisited;
+            gridObj->grid[destCoords.row][destCoords.col].setState(TileState::notVisited);
             gridObj->destCoords=mousePos;
 
             if(movingTile != &gridObj->grid[mousePos.row][mousePos.col])tilePosChanged = true;
 
             movingTile = &gridObj->grid[mousePos.row][mousePos.col];
-            movingTile->state= TileState::destination;
+            movingTile->setState(TileState::destination);
         }
 
         if(tilePosChanged)renderGrid(gridObj,window);

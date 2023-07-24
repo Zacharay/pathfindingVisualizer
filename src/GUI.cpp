@@ -3,7 +3,7 @@
 #include "libraries/imgui/imgui.h"
 #include "libraries/imgui/imgui-SFML.h"
 #include "Grid/Grid.h"
-#include "render.h"
+#include "Render/tileRenderer.h"
 #include "iostream"
 
 bool isMouseOverImGuiWindow(sf::RenderWindow *window,CONFIG *config)

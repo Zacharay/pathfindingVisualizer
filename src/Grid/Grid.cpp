@@ -1,31 +1,30 @@
 #include "Grid.h"
-#include <iostream>
+#include "../Render/tileRenderer.h"
+#include "iostream"
 Grid::Grid(int windowSize)
 :sourceCoords(24,24),destCoords(10,5)
 {
+    tileSize = windowSize/gridSize;
     grid = new Tile*[gridSize];
     for(int i=0;i<gridSize;i++)
     {
-        grid[i] = new Tile[gridSize];
+        grid[i]= new Tile[gridSize];
     }
+
 
     for(int row=0;row<gridSize;row++)
         for(int col = 0 ;col<gridSize;col++)
-            grid[row][col] = Tile(row,col);
+            grid[row][col] = Tile(row,col,tileSize);
 
-    tileSize = windowSize/gridSize;
-    grid[sourceCoords.row][sourceCoords.col].state = source;
-    grid[destCoords.row][destCoords.col].state = destination;
+
+    grid[sourceCoords.row][sourceCoords.col].setState(TileState::source);
+    grid[destCoords.row][destCoords.col].setState(TileState::destination);
 }
 Grid::~Grid()
 {
-    for (int i = 0; i < gridSize; ++i)
-    {
-      delete[] grid[i];
-    }
-
-    delete[] grid;
-
+    for(int i=0;i<gridSize;i++)
+        delete [] grid[i];
+    delete [] grid;
 }
 
 int roundToDecimal5(int number) {
@@ -42,35 +41,30 @@ int roundToDecimal5(int number) {
     return roundedNumber;
 }
 
-void Grid::resizeGrid(int newGridSize,int windowSize)
-{
-    Tile** newGrid = new Tile*[newGridSize];
-    for (int i = 0; i < newGridSize; ++i) {
-      newGrid[i] = new Tile[newGridSize];
-    }
-
-    for(int row=0;row<newGridSize;row++)
-        for(int col = 0 ;col<newGridSize;col++)
-            newGrid[row][col] = Tile(row,col);
-
-    int copySize = (newGridSize<gridSize)?newGridSize:gridSize;
-
-    for(int i=0;i<copySize;i++)
-    {
-        for(int j=0;j<copySize;j++)
-        {
-            newGrid[i][j] = grid[i][j];
-        }
-    }
-
+void Grid::resizeGrid(int newGridSize,int windowSize,CONFIG &config)
+{;
+    clearGridTexture();
     for (int i = 0; i < gridSize; ++i) {
       delete[] grid[i];
     }
     delete[] grid;
 
+    tileSize = windowSize/newGridSize;
+    grid = new Tile*[newGridSize];
+    for (int i = 0; i < newGridSize; ++i) {
+      grid[i] = new Tile[newGridSize];
+    }
+
+    for(int row=0;row<newGridSize;row++)
+        for(int col = 0 ;col<newGridSize;col++)
+            {
+                grid[row][col] = Tile(row,col,tileSize);
+                grid[row][col].setState(TileState::notVisited);
+            }
+    grid[sourceCoords.row][sourceCoords.col].setState(TileState::source);
+    grid[destCoords.row][destCoords.col].setState(TileState::destination);
+
     gridSize = newGridSize;
-    grid = newGrid;
-    tileSize = windowSize/gridSize;
 }
 void Grid::clearWalls()
 {
@@ -80,7 +74,7 @@ void Grid::clearWalls()
         {
             if(grid[row][col].state==TileState::wall)
             {
-                grid[row][col].state = TileState::notVisited;
+                grid[row][col].setState(TileState::notVisited);
             }
         }
     }
@@ -91,9 +85,9 @@ void Grid::clearPath()
     {
         for(int col=0;col<gridSize;col++)
         {
-            if(grid[row][col].state==TileState::visited||grid[row][col].state==TileState::path)
+            if(grid[row][col].state==TileState::visited||grid[row][col].state==TileState::path||grid[row][col].state==TileState::inQueue)
             {
-                grid[row][col].state = TileState::notVisited;
+                grid[row][col].setState(TileState::notVisited);
             }
         }
     }

@@ -26,7 +26,10 @@ void greedyBfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
         Tile *currentTile = tilesPQ.top();
         tilesPQ.pop();
 
-        if(currentTile->state!=TileState::source)currentTile->state = TileState::visited;
+        if(currentTile->state!=TileState::source)
+        {
+            currentTile->setState(TileState::visited);
+        }
 
         std::vector<Tile*>neighbors;
         getNeighbors(*currentTile,neighbors,*gridObj);
@@ -42,7 +45,7 @@ void greedyBfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 
             if(neighborTile->state==TileState::notVisited)
             {
-                neighborTile->state =TileState::inQueue;
+                neighborTile->setState(TileState::inQueue);
                 neighborTile->parentTile = currentTile;
                 tilesPQ.push(neighborTile);
             }

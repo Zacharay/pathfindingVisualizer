@@ -1,6 +1,8 @@
 #pragma once
 #include "Vector2.h"
 #include "Tile.h"
+#include "../config.h"
+#include <vector>
 class Grid
 {
 public:
@@ -12,7 +14,7 @@ public:
 public:
     Grid(int windowSize);
     ~Grid();
-    void resizeGrid(int newGridSize,int windowSize);
+    void resizeGrid(int newGridSize,int windowSize,CONFIG &config);
     void clearWalls();
     void clearPath();
 };

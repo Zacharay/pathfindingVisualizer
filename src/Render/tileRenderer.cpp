@@ -1,6 +1,7 @@
 #include "tileRenderer.h"
+#include <iostream>
 static sf::Color tileColors[6];
-static sf::RenderTexture gridTexture;
+ sf::RenderTexture gridTexture;
 
 void initializeTileColors()
 {
@@ -18,22 +19,28 @@ void initializeGridTexture(const CONFIG& config,const Grid &gridObj)
     gridTexture.create(config.WINDOW_WIDTH,config.WINDOW_HEIGHT);
     for(int row=0;row<gridObj.gridSize;row++)
         for(int col=0;col<gridObj.gridSize;col++)
-            updateTile(gridObj.grid[row][col],gridObj);
+            updateTile(gridObj.grid[row][col]);
+
+}
+void clearGridTexture()
+{
+    gridTexture.clear(sf::Color::Black);
 }
 void renderGrid(Grid *gridObj,sf::RenderWindow *window)
 {
+
     window->clear();
     window->draw(sf::Sprite(gridTexture.getTexture()));
     window->display();
 }
-void updateTile(const Tile &tile,const Grid &gridObj)
+void updateTile(const Tile &tile)
 {
     sf::RectangleShape tileShape;
-    tileShape.setSize(sf::Vector2f(gridObj.tileSize-1, gridObj.tileSize-1));
+    tileShape.setSize(sf::Vector2f(tile.tileSize-1, tile.tileSize-1));
     tileShape.setOutlineThickness(1.0f);
     tileShape.setOutlineColor(sf::Color(0, 11, 33));
     tileShape.setFillColor(tileColors[tile.state]);
-    tileShape.setPosition(tile.pos.col*gridObj.tileSize,tile.pos.row*gridObj.tileSize);
+    tileShape.setPosition(tile.pos.col*tile.tileSize,tile.pos.row*tile.tileSize);
 
     gridTexture.draw(tileShape);
     gridTexture.display();

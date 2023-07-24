@@ -32,15 +32,10 @@ void visualizePattern(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
         if( gridObj->grid[coords.row][coords.col].state!=TileState::destination&&
             gridObj->grid[coords.row][coords.col].state!=TileState::source)
         {
-            gridObj->grid[coords.row][coords.col].state = TileState::wall;
+            gridObj->grid[coords.row][coords.col].setState(TileState::wall);
         }
-
-
-        if(i%config->substep==0)
-        {
-            renderGrid(gridObj,window);
-            std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
-        }
+        renderGrid(gridObj,window);
+        std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
     }
     renderGrid(gridObj,window);
 }

@@ -30,7 +30,10 @@ void astarAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
     {
         Tile *currentTile = tilesPQ.top();
         tilesPQ.pop();
-        if(currentTile->state!=TileState::source)currentTile->state = TileState::visited;
+        if(currentTile->state!=TileState::source)
+        {
+            currentTile->setState(TileState::visited);
+        }
 
         std::vector<Tile*>neighbors;
         getNeighbors(*currentTile,neighbors,*gridObj);
@@ -55,7 +58,7 @@ void astarAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
                      neighborTile->parentTile = currentTile;
                      if(neighborTile->state!= TileState::inQueue)
                      {
-                        neighborTile->state = TileState::inQueue;
+                        neighborTile->setState(TileState::inQueue);
                         tilesPQ.push(neighborTile);
                      }
                 }
