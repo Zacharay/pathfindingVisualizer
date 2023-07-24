@@ -57,6 +57,7 @@
 		<Unit filename="src/Algorithms/Others/generateFrame.h" />
 		<Unit filename="src/Algorithms/Pathfinding/BFS.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/DFS.cpp" />
+		<Unit filename="src/Algorithms/Pathfinding/GBFS.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/aStar.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/visualizePathfinding.cpp" />
 		<Unit filename="src/Algorithms/Pathfinding/visualizePathfinding.h" />
