@@ -7,33 +7,23 @@ bool dfs(Tile *currentTile,Grid *gridObj,sf::RenderWindow *window,CONFIG *config
     renderGrid(gridObj,window);
     std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
 
-    int dirX[]= {1,0,-1,0};
-    int dirY[]= {0,-1,0,1};
-
-    for(int i=0;i<4;i++)
+    std::vector<Tile*>neighbors;
+    getNeighbors(*currentTile,neighbors,*gridObj);
+    for(Tile* neighborTile:neighbors)
     {
-        int new_col = currentTile->pos.col + dirX[i];
-        int new_row = currentTile->pos.row + dirY[i];
-
-
-        bool isTileOnBoard = new_col>=0&&new_col<gridObj->gridSize&&new_row>=0&&new_row<gridObj->gridSize;
-        if(!isTileOnBoard)continue;
-
-        Tile *newTile = &gridObj->grid[new_row][new_col];
-
-        if(newTile->state==TileState::destination)
+        if(neighborTile->state==TileState::destination)
         {
-            newTile->parentTile = &gridObj->grid[currentTile->pos.row][currentTile->pos.col];
-            drawPath(gridObj,window,newTile->parentTile,config);
+            neighborTile->parentTile = currentTile;
+            drawPath(gridObj,window,neighborTile->parentTile,config);
             return true;
         }
 
 
-        if(newTile->state==notVisited&&newTile->state!=TileState::wall)
+        if(neighborTile->state==notVisited)
         {
-            newTile->parentTile = &gridObj->grid[currentTile->pos.row][currentTile->pos.col];
+            neighborTile->parentTile = currentTile;
 
-            if (dfs(newTile,gridObj,window,config)) {
+            if (dfs(neighborTile,gridObj,window,config)) {
                     return true;
             }
 

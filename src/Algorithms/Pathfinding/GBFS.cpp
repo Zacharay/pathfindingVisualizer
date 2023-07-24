@@ -30,16 +30,11 @@ void greedyBfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 
         if(currentTile->state!=TileState::source)currentTile->state = TileState::visited;
 
-        for(int i=0;i<4;i++)
+        std::vector<Tile*>neighbors;
+        getNeighbors(*currentTile,neighbors,*gridObj);
+
+        for(Tile* neighborTile:neighbors)
         {
-            int new_col = currentTile->pos.col+dirX[i];
-            int new_row = currentTile->pos.row+dirY[i];
-
-            bool isTileOnBoard = new_col>=0&&new_col<gridObj->gridSize&&new_row>=0&&new_row<gridObj->gridSize;
-            if(!isTileOnBoard|| gridObj->grid[new_row][new_col].state == TileState::wall)continue;
-
-            Tile *neighborTile = &gridObj->grid[new_row][new_col];
-
             if(neighborTile->state == TileState::destination)
             {
                 neighborTile->parentTile = currentTile;
@@ -50,7 +45,7 @@ void greedyBfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
             if(neighborTile->state==TileState::notVisited)
             {
                 neighborTile->state =TileState::inQueue;
-                gridObj->grid[neighborTile->pos.row][neighborTile->pos.col].parentTile = currentTile;
+                neighborTile->parentTile = currentTile;
                 tilesPQ.push(neighborTile);
             }
 

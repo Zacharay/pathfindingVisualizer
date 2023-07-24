@@ -20,7 +20,7 @@ struct Tile
 
     Tile *parentTile = nullptr;
     Tile():
-    pos(0,0),fCost(0),gCost(1000),hCost(0),state(TileState::notVisited){}
+    pos(0,0),state(TileState::notVisited),hCost(0),gCost(1000),fCost(0){}
     Tile(int row,int col):
     pos(col,row),fCost(0),gCost(1000),hCost(0),state(TileState::notVisited){}
     void calculateDistanceToDest(Vector2 destCoords);

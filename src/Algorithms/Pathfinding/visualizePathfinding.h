@@ -8,6 +8,7 @@
 #include "../Others/drawPath.h"
 #include <SFML/Graphics.hpp>
 #include "../../config.h"
+#include "../Others/getNeighbors.h"
 enum Algorithms{
     BFS,
     DFS,

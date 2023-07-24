@@ -15,7 +15,7 @@
 	"Vector2.h"
 	"Tile.h"
 
-1690142847 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Tile.h
+1690205859 /home/zachary/Projects/pathfindingVisualizer/src/Grid/Tile.h
 	"Vector2.h"
 
 1689862806 /home/zachary/Projects/pathfindingVisualizer/src/render.h
@@ -290,11 +290,11 @@
 	"../../Grid/Grid.h"
 	"../../config.h"
 
-1690195400 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/DFS.cpp
+1690206278 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/DFS.cpp
 	"visualizePathfinding.h"
 	<iostream>
 
-1690137735 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.h
+1690205477 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.h
 	"../../Grid/Grid.h"
 	"queue"
 	"../../Grid/Vector2.h"
@@ -304,6 +304,7 @@
 	"../Others/drawPath.h"
 	<SFML/Graphics.hpp>
 	"../../config.h"
+	"../Others/getNeighbors.h"
 
 1690194958 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/visualizePathfinding.cpp
 	"visualizePathfinding.h"
@@ -335,7 +336,7 @@
 	<vector>
 	<iostream>
 
-1690195009 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/BFS.cpp
+1690206018 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/BFS.cpp
 	"visualizePathfinding.h"
 	<iostream>
 
@@ -371,7 +372,7 @@
 1690025619 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/DSU.h
 	"../../Grid/Vector2.h"
 
-1690144647 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/aStar.cpp
+1690206123 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Pathfinding/aStar.cpp
 	"visualizePathfinding.h"
 	<queue>
 
@@ -393,4 +394,11 @@
 	<vector>
 	<queue>
 	<iostream>
+
+1690205908 source:/home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/getNeighbors.cpp
+	"getNeighbors.h"
+
+1690205734 /home/zachary/Projects/pathfindingVisualizer/src/Algorithms/Others/getNeighbors.h
+	<vector>
+	<../../Grid/Grid.h>
 
