@@ -10,11 +10,14 @@ public:
     Tile **grid;
     Vector2 sourceCoords;
     Vector2 destCoords;
+    Tile *srcTile;
+    Tile *destTile;
     int tileSize;
 public:
     Grid(int windowSize);
     ~Grid();
     void resizeGrid(int newGridSize,int windowSize,CONFIG &config);
     void clearWalls();
+    void clearTilesCosts();
     void clearPath();
 };

@@ -39,7 +39,7 @@ void bfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
                 tilesQ.push(neighborTile);
             }
         }
-        renderGrid(gridObj,window);
+        renderGrid(window);
         std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
 
     }

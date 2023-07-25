@@ -26,4 +26,5 @@ struct Tile
     pos(col,row),state(TileState::notVisited),hCost(0),gCost(1000),fCost(0),tileSize(tileSize){}
     void calculateDistanceToDest(Vector2 destCoords);
     void setState(int newState);
+    void setInitialCosts();
 };

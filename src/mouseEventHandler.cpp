@@ -21,7 +21,7 @@ void drawWalls(sf::RenderWindow *window,Grid *gridObj)
                     {
                         gridObj->grid[mousePos.row][mousePos.col].setState(TileState::wall);
                     }
-                    renderGrid(gridObj,window);
+                    renderGrid(window);
                 }
 }
 
@@ -60,7 +60,7 @@ void moveTile(sf::RenderWindow *window,Grid *gridObj)
             movingTile->setState(TileState::destination);
         }
 
-        if(tilePosChanged)renderGrid(gridObj,window);
+        if(tilePosChanged)renderGrid(window);
 
 }
 
@@ -87,7 +87,7 @@ void handleMouseEvents(Grid *gridObj,sf::RenderWindow *window,sf::Event *event){
         if(event->type==sf::Event::MouseButtonPressed&&event->mouseButton.button==sf::Mouse::Left&&movingTile!=nullptr&&hasTileMoved)
         {
             movingTile = nullptr;
-            renderGrid(gridObj,window);
+            renderGrid(window);
         }
         if(event->type==sf::Event::MouseMoved&&movingTile!=nullptr)
         {

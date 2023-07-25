@@ -23,14 +23,14 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
         if(config->isResizeClicked)
         {
             gridObj->resizeGrid(config->gridSize,config->WINDOW_WIDTH,*config);
-            renderGrid(gridObj,window);
+            renderGrid(window);
             config->isResizeClicked = false;
         }
         if(config->isClearWallsClicked)
         {
             gridObj->clearPath();
             gridObj->clearWalls();
-            renderGrid(gridObj,window);
+            renderGrid(window);
             config->isClearWallsClicked = false;
         }
         if(config->isPatternStarted&&!isAlgorithmStarted)
@@ -67,7 +67,7 @@ void renderLoop()
     Grid gridObj(config.WINDOW_WIDTH);
     initializeTileColors();
     initializeGridTexture(config,gridObj);
-    renderGrid(&gridObj,&window);
+    renderGrid(&window);
 
     ImGui::SFML::Init(window);
 

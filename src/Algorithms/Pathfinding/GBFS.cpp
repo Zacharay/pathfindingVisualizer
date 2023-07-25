@@ -10,6 +10,7 @@ struct CompareNodesHCost {
 
 void greedyBfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
+    gridObj->clearTilesCosts();
     for(int row=0;row<gridObj->gridSize;row++)
     {
         for(int col=0;col<gridObj->gridSize;col++)
@@ -17,6 +18,7 @@ void greedyBfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
             gridObj->grid[row][col].calculateDistanceToDest(gridObj->destCoords);
         }
     }
+
     std::priority_queue<Tile*,std::vector<Tile*>,CompareNodesHCost>tilesPQ;
     Tile *srcTile = &gridObj->grid[gridObj->sourceCoords.row][gridObj->sourceCoords.col];
     tilesPQ.push(srcTile);
@@ -51,7 +53,7 @@ void greedyBfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
             }
 
         }
-        renderGrid(gridObj,window);
+        renderGrid(window);
         std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
     }
 

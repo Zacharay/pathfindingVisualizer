@@ -16,9 +16,10 @@ Grid::Grid(int windowSize)
         for(int col = 0 ;col<gridSize;col++)
             grid[row][col] = Tile(row,col,tileSize);
 
-
-    grid[sourceCoords.row][sourceCoords.col].setState(TileState::source);
-    grid[destCoords.row][destCoords.col].setState(TileState::destination);
+    srcTile = &grid[sourceCoords.row][sourceCoords.col];
+    srcTile->setState(TileState::source);
+    destTile = &grid[destCoords.row][destCoords.col];
+    destTile->setState(TileState::destination);
 }
 Grid::~Grid()
 {
@@ -42,14 +43,17 @@ int roundToDecimal5(int number) {
 }
 
 void Grid::resizeGrid(int newGridSize,int windowSize,CONFIG &config)
-{;
-    clearGridTexture();
+{
+
     for (int i = 0; i < gridSize; ++i) {
       delete[] grid[i];
     }
     delete[] grid;
 
     tileSize = windowSize/newGridSize;
+    gridSize = newGridSize;
+
+
     grid = new Tile*[newGridSize];
     for (int i = 0; i < newGridSize; ++i) {
       grid[i] = new Tile[newGridSize];
@@ -64,8 +68,19 @@ void Grid::resizeGrid(int newGridSize,int windowSize,CONFIG &config)
     grid[sourceCoords.row][sourceCoords.col].setState(TileState::source);
     grid[destCoords.row][destCoords.col].setState(TileState::destination);
 
-    gridSize = newGridSize;
+
 }
+void Grid::clearTilesCosts()
+{
+    for(int row=0;row<gridSize;row++)
+    {
+        for(int col=0;col<gridSize;col++)
+        {
+            grid[row][col].setInitialCosts();
+        }
+    }
+}
+
 void Grid::clearWalls()
 {
     for(int row=0;row<gridSize;row++)

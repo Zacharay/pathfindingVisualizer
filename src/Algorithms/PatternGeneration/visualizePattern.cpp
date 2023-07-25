@@ -26,7 +26,7 @@ void visualizePattern(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
         generateSpiral(true,gridObj,&walls);
     }
 
-   for(int i=0;i<walls.size();i++)
+   for(size_t i=0;i<walls.size();i++)
     {
         Vector2 coords = walls[i];
         if( gridObj->grid[coords.row][coords.col].state!=TileState::destination&&
@@ -34,8 +34,8 @@ void visualizePattern(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
         {
             gridObj->grid[coords.row][coords.col].setState(TileState::wall);
         }
-        renderGrid(gridObj,window);
+        renderGrid(window);
         std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
     }
-    renderGrid(gridObj,window);
+    renderGrid(window);
 }

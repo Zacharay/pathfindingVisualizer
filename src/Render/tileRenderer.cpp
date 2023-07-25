@@ -1,7 +1,7 @@
 #include "tileRenderer.h"
-#include <iostream>
-static sf::Color tileColors[6];
- sf::RenderTexture gridTexture;
+
+static sf::Color tileColors[7];
+static sf::RenderTexture gridTexture;
 
 void initializeTileColors()
 {
@@ -22,13 +22,8 @@ void initializeGridTexture(const CONFIG& config,const Grid &gridObj)
             updateTile(gridObj.grid[row][col]);
 
 }
-void clearGridTexture()
+void renderGrid(sf::RenderWindow *window)
 {
-    gridTexture.clear(sf::Color::Black);
-}
-void renderGrid(Grid *gridObj,sf::RenderWindow *window)
-{
-
     window->clear();
     window->draw(sf::Sprite(gridTexture.getTexture()));
     window->display();

@@ -14,3 +14,10 @@ void Tile::setState(int newState)
     state = newState;
     updateTile(*this);
 }
+void Tile::setInitialCosts()
+{
+    fCost = 0;
+    gCost = 1000;
+    hCost = 0;
+
+}

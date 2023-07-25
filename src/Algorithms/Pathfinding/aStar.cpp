@@ -10,7 +10,7 @@ struct CompareNodesFCost {
 
 void astarAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
-
+    gridObj->clearTilesCosts();
     for(int row=0;row<gridObj->gridSize;row++)
     {
         for(int col=0;col<gridObj->gridSize;col++)
@@ -65,7 +65,8 @@ void astarAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
             }
 
         }
-        renderGrid(gridObj,window);
+        renderGrid(window);
         std::this_thread::sleep_for(std::chrono::milliseconds(11-config->visualizationSpeed));
     }
+
 }
