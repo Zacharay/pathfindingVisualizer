@@ -53,7 +53,7 @@ void processEvents(sf::RenderWindow *window,Grid *gridObj,CONFIG *config)
         }
         if(!(config->isPathfindingStarted||config->isPatternStarted)&&!isMouseOverImGuiWindow(window,config))
         {
-            handleMouseEvents(gridObj,window,&event);
+            handleMouseEvents(config->WINDOW_WIDTH,config->WINDOW_HEIGHT,*gridObj,*window,event);
         }
 
     }

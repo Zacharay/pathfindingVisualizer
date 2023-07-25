@@ -72,7 +72,6 @@ void Grid::resizeGrid(int newGridSize,int windowSize,CONFIG &config)
                 grid[row][col] = Tile(row,col,tileSize);
                 grid[row][col].setState(TileState::notVisited);
             }
-
     setNewSourceAndDest();
 
 }

@@ -2,4 +2,4 @@
 #include "Grid/Grid.h"
 #include "SFML/Graphics.hpp"
 
-void handleMouseEvents(Grid *gridObj,sf::RenderWindow *window,sf::Event *event);
+void handleMouseEvents(const int windowWidth,const int windowHeight,Grid &gridObj,sf::RenderWindow &window,const sf::Event &event);
