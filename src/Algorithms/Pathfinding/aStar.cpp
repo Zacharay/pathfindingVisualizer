@@ -15,16 +15,15 @@ void astarAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
     {
         for(int col=0;col<gridObj->gridSize;col++)
         {
-            gridObj->grid[row][col].calculateDistanceToDest(gridObj->destCoords);
+            gridObj->grid[row][col].calculateDistanceToDest(gridObj->destTile->pos);
         }
     }
 
     std::priority_queue<Tile*,std::vector<Tile*>,CompareNodesFCost>tilesPQ;
 
-    Tile *srcTile = &gridObj->grid[gridObj->sourceCoords.row][gridObj->sourceCoords.col];
-    srcTile->fCost = srcTile->hCost;
-    srcTile->gCost = 0;
-    tilesPQ.push(srcTile);
+    gridObj->srcTile->fCost = gridObj->srcTile->hCost;
+    gridObj->srcTile->gCost = 0;
+    tilesPQ.push(gridObj->srcTile);
 
     while(!tilesPQ.empty())
     {

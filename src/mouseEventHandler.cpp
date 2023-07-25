@@ -40,24 +40,23 @@ void moveTile(sf::RenderWindow *window,Grid *gridObj)
 
         if(movingTile->state==TileState::source)
         {
-            Vector2 srcCoords = gridObj->sourceCoords;
-            gridObj->grid[srcCoords.row][srcCoords.col].setState(TileState::notVisited);
-            gridObj->sourceCoords=mousePos;
+            gridObj->srcTile->setState(TileState::notVisited);
+
             if(movingTile != &gridObj->grid[mousePos.row][mousePos.col])tilePosChanged = true;
 
             movingTile = &gridObj->grid[mousePos.row][mousePos.col];
-            movingTile->setState(TileState::source);
+            gridObj->srcTile = movingTile;
+            gridObj->srcTile->setState(TileState::source);
         }
         else
         {
-            Vector2 destCoords = gridObj->destCoords;
-            gridObj->grid[destCoords.row][destCoords.col].setState(TileState::notVisited);
-            gridObj->destCoords=mousePos;
+            gridObj->destTile->setState(TileState::notVisited);
 
             if(movingTile != &gridObj->grid[mousePos.row][mousePos.col])tilePosChanged = true;
 
-            movingTile = &gridObj->grid[mousePos.row][mousePos.col];
-            movingTile->setState(TileState::destination);
+            gridObj->destTile =&gridObj->grid[mousePos.row][mousePos.col];
+            gridObj->destTile->setState(TileState::destination);
+
         }
 
         if(tilePosChanged)renderGrid(window);

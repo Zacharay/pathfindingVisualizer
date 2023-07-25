@@ -15,13 +15,12 @@ void greedyBfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
     {
         for(int col=0;col<gridObj->gridSize;col++)
         {
-            gridObj->grid[row][col].calculateDistanceToDest(gridObj->destCoords);
+            gridObj->grid[row][col].calculateDistanceToDest(gridObj->destTile->pos);
         }
     }
 
     std::priority_queue<Tile*,std::vector<Tile*>,CompareNodesHCost>tilesPQ;
-    Tile *srcTile = &gridObj->grid[gridObj->sourceCoords.row][gridObj->sourceCoords.col];
-    tilesPQ.push(srcTile);
+    tilesPQ.push(gridObj->srcTile);
 
     while(!tilesPQ.empty())
     {

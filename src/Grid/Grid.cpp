@@ -2,7 +2,6 @@
 #include "../Render/tileRenderer.h"
 #include "iostream"
 Grid::Grid(int windowSize)
-:sourceCoords(24,24),destCoords(10,5)
 {
     tileSize = windowSize/gridSize;
     grid = new Tile*[gridSize];
@@ -16,10 +15,7 @@ Grid::Grid(int windowSize)
         for(int col = 0 ;col<gridSize;col++)
             grid[row][col] = Tile(row,col,tileSize);
 
-    srcTile = &grid[sourceCoords.row][sourceCoords.col];
-    srcTile->setState(TileState::source);
-    destTile = &grid[destCoords.row][destCoords.col];
-    destTile->setState(TileState::destination);
+    setNewSourceAndDest();
 }
 Grid::~Grid()
 {
@@ -41,7 +37,18 @@ int roundToDecimal5(int number) {
 
     return roundedNumber;
 }
+void Grid::setNewSourceAndDest()
+{
+    int srcRow = gridSize/2;
+    int srcCol = gridSize/10;
+    srcTile = &grid[srcRow][srcCol];
+    srcTile->setState(TileState::source);
 
+    int destRow = gridSize/2;
+    int destCol = gridSize-(gridSize/10);
+    destTile = &grid[destRow][destCol];
+    destTile->setState(TileState::destination);
+}
 void Grid::resizeGrid(int newGridSize,int windowSize,CONFIG &config)
 {
 
@@ -65,9 +72,8 @@ void Grid::resizeGrid(int newGridSize,int windowSize,CONFIG &config)
                 grid[row][col] = Tile(row,col,tileSize);
                 grid[row][col].setState(TileState::notVisited);
             }
-    grid[sourceCoords.row][sourceCoords.col].setState(TileState::source);
-    grid[destCoords.row][destCoords.col].setState(TileState::destination);
 
+    setNewSourceAndDest();
 
 }
 void Grid::clearTilesCosts()

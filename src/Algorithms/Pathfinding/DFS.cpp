@@ -37,6 +37,5 @@ bool dfs(Tile *currentTile,Grid *gridObj,sf::RenderWindow *window,CONFIG *config
 
 void dfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config)
 {
-    Tile *srcTile = &gridObj->grid[gridObj->sourceCoords.row][gridObj->sourceCoords.col];
-    dfs(srcTile,gridObj,window,config);
+    dfs(gridObj->srcTile,gridObj,window,config);
 }

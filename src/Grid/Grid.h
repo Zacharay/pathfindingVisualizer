@@ -8,8 +8,6 @@ class Grid
 public:
     int gridSize = 45;
     Tile **grid;
-    Vector2 sourceCoords;
-    Vector2 destCoords;
     Tile *srcTile;
     Tile *destTile;
     int tileSize;
@@ -20,4 +18,6 @@ public:
     void clearWalls();
     void clearTilesCosts();
     void clearPath();
+private:
+    void setNewSourceAndDest();
 };

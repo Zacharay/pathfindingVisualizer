@@ -6,9 +6,7 @@ void bfsAlgorithm(Grid *gridObj,sf::RenderWindow *window,CONFIG *config){
 
     std::queue<Tile*> tilesQ;
 
-
-    Tile *srcTile = &gridObj->grid[gridObj->sourceCoords.row][gridObj->sourceCoords.col];
-    tilesQ.push(srcTile);
+    tilesQ.push(gridObj->srcTile);
     while(!tilesQ.empty())
     {
         Tile* currentTile = tilesQ.front();
